@@ -11,12 +11,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Data Planning</h1>
+                <h1>Data Transaksi</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ site_url('') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Data Planning</li>
+                    <li class="breadcrumb-item active">Data Transaksi</li>
                 </ol>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Planning</h3>
+                    <h3 class="card-title">Transaksi</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fa fa-minus"></i></button>
@@ -44,17 +44,19 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Planning</a>
+										<a href="{{ site_url('transaksi/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Transaksi</a>
+										<a href="{{ site_url('transaksi/detail') }}" class="btn btn-info btn-xs"><i class="fa fa-gear"></i> Detail Transaksi</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="row float-right">
 										<label for="filter">
 											<select id="table-data-filter-column" class="form-control form-control-sm">
-												<option>Judul</option>
-												<option>Tanggal Promo Mulai</option>
-												<option>NIP</option>
-												<option>Status</option>
+												<option>Tanggal</option>
+												<option>Sub Total</option>
+												<option>Kupon</option>
+												<option>Total Harga</option>
+												<option>Kasir</option>
 											</select>
 										</label>
 									</div>
@@ -67,18 +69,22 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Judul</th>
-                                    <th>Tanggal Promo</th>
-                                    <th>NIP</th>
+                                    <th>Tanggal</th>
+									<th>Sub Total</th>
+									<th>Kupon</th>
+									<th>Total Harga</th>
+									<th>Kasir</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
 									<td>1</td>
-                                    <td>Promo Buy One Get One</td>
-                                    <td>14 July 2019 - 21 July 2019</td>
-									<td>10036432</td>
+									<td>14 July 2019</td>
+									<td>150000</td>
+									<td>Kupon #1 - 25%</td>
+									<td>125000</td>
+									<td>setiawan1</td>
 									<td>
                                         <div class="btn-group">
                                             <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
@@ -86,11 +92,11 @@
                                                 <i class="fa fa-chevron-circle-down"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-show" href="{{ site_url('planning/show/1') }}"><i
+                                                <a class="dropdown-item nav-show" href="{{ site_url('transaksi/show/1') }}"><i
                                                     class="fa fa-eye"></i> Show</a>
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('planning/edit/1') }}"><i
+                                                <a class="dropdown-item nav-warning" href="{{ site_url('transaksi/edit/1') }}"><i
                                                     class="fa fa-edit"></i> Edit</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('planning/destroy/1') }}"><i 
+												<a class="dropdown-item nav-danger" href="{{ site_url('transaksi/destroy/1') }}"><i 
 													class="fa fa-trash"></i> Delete</a>
                                             </div>
                                         </div>

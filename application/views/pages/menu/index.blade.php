@@ -80,10 +80,21 @@
                                     <td>20000</td>
 									<td>10</td>
 									<td>
-										<a class="btn btn-info" href="{{ site_url('menu/show/1') }}"><i class="fa fa-eye"></i> Show</a>
-										<a class="btn btn-warning" href="{{ site_url('menu/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
-										<a class="btn btn-danger" href="{{ site_url('menu/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
-									</td>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-chevron-circle-down"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item nav-show" href="{{ site_url('menu/show/1') }}"><i
+                                                    class="fa fa-eye"></i> Show</a>
+                                                <a class="dropdown-item nav-warning" href="{{ site_url('menu/edit/1') }}"><i
+                                                    class="fa fa-edit"></i> Edit</a>
+												<a class="dropdown-item nav-danger" href="{{ site_url('menu/destroy/1') }}"><i 
+													class="fa fa-trash"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
 								</tr>
                             </tbody>
                         </table>

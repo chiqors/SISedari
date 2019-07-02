@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Show Planning <small></small></h1>
+                    <h1>Show Pengguna <small></small></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ site_url('dashboard') }}">Dashboard</a></li>
                         <li class="breadcrumb-item"><a href="{{ site_url('pengguna') }}">Pengguna</a></li>
-                        <li class="breadcrumb-item active">Show Planning</li>
+                        <li class="breadcrumb-item active">Show Pengguna</li>
                     </ol>
                 </div>
             </div>
@@ -43,25 +43,37 @@
                                 <table class="table table-user-information">
                                     <tbody>
                                         <tr>
-                                            <td>Judul</td>
-                                            <td>Promo Buy One Get One</td>
+                                            <td>Nama Lengkap</td>
+                                            <td>Setiawan Gunadi</td>
                                         </tr>
                                         <tr>
-                                            <td>Isi Konten</td>
-                                            <td>No thou floating bird such here agreeing he, a chamber eagerly have yore, of fancy stately sought i my, gave.</td>
+                                            <td>Alamat</td>
+                                            <td>Jl. Rancaekek no 2</td>
                                         </tr>
                                         <tr>
-                                            <td>Stok Tersedia</td>
-                                            <td>10</td>
-                                        </tr>
+                                            <td>Kontak</td>
+                                            <td>07842342345</td>
+										</tr>
+										<tr>
+											<td>Jabatan</td>
+											<td>Kasir</td>
+										</tr>
+										<tr>
+											<td>Username</td>
+											<td>setiawan1</td>
+										</tr>
+										<tr>
+											<td>Password</td>
+											<td><button class="btn btn-info btn-xs show-pw"><i class="fa fa-eye"></i> Show</button></td>
+										</tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('menu/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
-						<a class="btn btn-danger" href="{{ site_url('menu/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
+						<a class="btn btn-warning" href="{{ site_url('pengguna/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
+						<a class="btn btn-danger" href="{{ site_url('pengguna/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
                     </div>
                 </div>
             </div>

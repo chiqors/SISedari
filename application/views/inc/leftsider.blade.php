@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ site_url('dashboard') }}" class="brand-link bg-primary">
-        <img src="" alt="Logo" class="brand-image"
+        <img src="{{ asset('cpanel/img/logo.png') }}" alt="Logo" class="brand-image"
             style="opacity: .8">
         <span class="brand-text font-weight"><b>SiSedari</b></span>
     </a>
@@ -46,6 +46,12 @@
                             </a>
 						</li>
 						<li class="nav-item">
+                            <a href="{{ site_url('transaksi') }}" class="nav-link {{ @$activeSubMenu == 'transaksi' ? 'active' : '' }}">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Transaksi</p>
+                            </a>
+						</li>
+						<li class="nav-item">
                             <a href="{{ site_url('kupon') }}" class="nav-link {{ @$activeSubMenu == 'kupon' ? 'active' : '' }}">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Kupon</p>
@@ -55,7 +61,13 @@
                             <a href="{{ site_url('planning') }}" class="nav-link {{ @$activeSubMenu == 'planning' ? 'active' : '' }}">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Planning</p>
-                            </a>
+							</a>
+						</li>
+						<li class="nav-item">
+                            <a href="{{ site_url('pengguna') }}" class="nav-link {{ @$activeSubMenu == 'pengguna' ? 'active' : '' }}">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Pengguna</p>
+							</a>
                         </li>
                     </ul>
                 </li>

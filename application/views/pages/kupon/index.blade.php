@@ -76,9 +76,19 @@
                                     <td>13 July 2019</td>
                                     <td>25% (0.25)</td>
 									<td>
-										<a class="btn btn-warning" href="{{ site_url('kupon/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
-										<a class="btn btn-danger" href="{{ site_url('kupon/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
-									</td>
+                                        <div class="btn-group">
+                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-chevron-circle-down"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item nav-warning" href="{{ site_url('kupon/edit/1') }}"><i
+                                                    class="fa fa-edit"></i> Edit</a>
+												<a class="dropdown-item nav-danger" href="{{ site_url('kupon/destroy/1') }}"><i 
+													class="fa fa-trash"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
 								</tr>
                             </tbody>
                         </table>
