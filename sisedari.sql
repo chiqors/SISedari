@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 17 Jun 2019 pada 11.29
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Host: localhost:3306
+-- Generation Time: Jul 02, 2019 at 06:22 AM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_soto_sedari`
+-- Database: `sisedari`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_transaksi`
+-- Table structure for table `detail_transaksi`
 --
 
 CREATE TABLE `detail_transaksi` (
@@ -38,24 +38,7 @@ CREATE TABLE `detail_transaksi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `karyawan`
---
-
-CREATE TABLE `karyawan` (
-  `nip` varchar(10) NOT NULL,
-  `nama` varchar(25) DEFAULT NULL,
-  `alamat` varchar(30) DEFAULT NULL,
-  `kontak` varchar(15) DEFAULT NULL,
-  `jabatan` varchar(10) DEFAULT NULL,
-  `username` varchar(15) DEFAULT NULL,
-  `password` varchar(155) DEFAULT NULL,
-  `hakakses` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `kupon`
+-- Table structure for table `kupon`
 --
 
 CREATE TABLE `kupon` (
@@ -67,7 +50,7 @@ CREATE TABLE `kupon` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE `menu` (
@@ -80,7 +63,23 @@ CREATE TABLE `menu` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `planning`
+-- Table structure for table `pengguna`
+--
+
+CREATE TABLE `pengguna` (
+  `nip` varchar(10) NOT NULL,
+  `nama` varchar(25) DEFAULT NULL,
+  `alamat` varchar(30) DEFAULT NULL,
+  `kontak` varchar(15) DEFAULT NULL,
+  `jabatan` varchar(10) DEFAULT NULL,
+  `username` varchar(15) DEFAULT NULL,
+  `password` varchar(155) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `planning`
 --
 
 CREATE TABLE `planning` (
@@ -88,6 +87,7 @@ CREATE TABLE `planning` (
   `judul` varchar(30) DEFAULT NULL,
   `konten` text,
   `tanggal_promo_mulai` date DEFAULT NULL,
+  `tanggal_promo_selesai` date NOT NULL,
   `nip_karyawan` varchar(10) DEFAULT NULL,
   `status` enum('Unchecked','Approved','Unapproved') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,7 +95,7 @@ CREATE TABLE `planning` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -114,39 +114,39 @@ CREATE TABLE `transaksi` (
 --
 
 --
--- Indeks untuk tabel `detail_transaksi`
+-- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD PRIMARY KEY (`id_transaksi`,`id_menu`),
   ADD KEY `id_menu` (`id_menu`);
 
 --
--- Indeks untuk tabel `karyawan`
---
-ALTER TABLE `karyawan`
-  ADD PRIMARY KEY (`nip`);
-
---
--- Indeks untuk tabel `kupon`
+-- Indexes for table `kupon`
 --
 ALTER TABLE `kupon`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `planning`
+-- Indexes for table `pengguna`
+--
+ALTER TABLE `pengguna`
+  ADD PRIMARY KEY (`nip`);
+
+--
+-- Indexes for table `planning`
 --
 ALTER TABLE `planning`
   ADD PRIMARY KEY (`id`),
   ADD KEY `nip_karyawan` (`nip_karyawan`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`),
@@ -154,27 +154,27 @@ ALTER TABLE `transaksi`
   ADD KEY `kupon` (`kupon`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_transaksi`
+-- Constraints for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
   ADD CONSTRAINT `detail_transaksi_ibfk_1` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id`),
   ADD CONSTRAINT `detail_transaksi_ibfk_2` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `planning`
+-- Constraints for table `planning`
 --
 ALTER TABLE `planning`
-  ADD CONSTRAINT `planning_ibfk_1` FOREIGN KEY (`nip_karyawan`) REFERENCES `karyawan` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `planning_ibfk_1` FOREIGN KEY (`nip_karyawan`) REFERENCES `pengguna` (`nip`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `transaksi`
+-- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`kasir`) REFERENCES `karyawan` (`nip`),
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`kasir`) REFERENCES `pengguna` (`nip`),
   ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`kupon`) REFERENCES `kupon` (`id`);
 COMMIT;
 
