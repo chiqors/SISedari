@@ -8,7 +8,7 @@ class Auth extends CI_Controller {
 		$data = array(
             'title' => 'Login'
         );
-		$this->slice->view('pages.auth.login', $data);
+		$this->slice->view('entities.auth.pages.login', $data);
 	}
 
 	public function do_login()

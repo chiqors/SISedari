@@ -53,6 +53,88 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['auth/login'] = 'auth/login';
+$route['dashboard'] = 'auth/login';
+
+// -------------------------------------
+// Manager
+// -------------------------------------
+
+$route['manager'] = 'entities/manager/beranda/index';
+$route['manager/beranda'] = 'entities/manager/beranda/index';
+
+$route['manager/menu'] = 'entities/manager/menu/index';
+$route['manager/menu/create'] = 'entities/manager/menu/create';
+$route['manager/menu/store'] = 'entities/manager/menu/store';
+$route['manager/menu/show/(:any)'] = 'entities/manager/menu/show/$1';
+$route['manager/menu/edit/(:any)'] = 'entities/manager/menu/edit/$1';
+$route['manager/menu/update/(:any)'] = 'entities/manager/menu/update/$1';
+$route['manager/menu/destroy/(:any)'] = 'entities/manager/menu/destroy/$1';
+
+$route['manager/kupon'] = 'entities/manager/kupon/index';
+$route['manager/kupon/create'] = 'entities/manager/kupon/create';
+$route['manager/kupon/store'] = 'entities/manager/kupon/store';
+$route['manager/kupon/edit/(:any)'] = 'entities/manager/kupon/edit/$1';
+$route['manager/kupon/update/(:any)'] = 'entities/manager/kupon/update/$1';
+$route['manager/kupon/destroy/(:any)'] = 'entities/manager/kupon/destroy/$1';
+
+$route['manager/planning'] = 'entities/manager/planning/index';
+$route['manager/planning/create'] = 'entities/manager/planning/create';
+$route['manager/planning/store'] = 'entities/manager/planning/store';
+$route['manager/planning/show/(:any)'] = 'entities/manager/planning/show/$1';
+$route['manager/planning/edit/(:any)'] = 'entities/manager/planning/edit/$1';
+$route['manager/planning/update/(:any)'] = 'entities/manager/planning/update/$1';
+$route['manager/planning/destroy/(:any)'] = 'entities/manager/planning/destroy/$1';
+
+$route['manager/pengguna'] = 'entities/manager/pengguna/index';
+$route['manager/pengguna/create'] = 'entities/manager/pengguna/create';
+$route['manager/pengguna/store'] = 'entities/manager/pengguna/store';
+$route['manager/pengguna/show/(:any)'] = 'entities/manager/pengguna/show/$1';
+$route['manager/pengguna/edit/(:any)'] = 'entities/manager/pengguna/edit/$1';
+$route['manager/pengguna/update/(:any)'] = 'entities/manager/pengguna/update/$1';
+$route['manager/pengguna/destroy/(:any)'] = 'entities/manager/pengguna/destroy/$1';
+
+// -------------------------------------
+// Kasir
+// -------------------------------------
+
+$route['kasir'] = 'entities/kasir/beranda/index';
+$route['kasir/beranda'] = 'entities/kasir/beranda/index';
+
+$route['kasir/transaksi'] = 'entities/kasir/transaksi/index';
+$route['kasir/transaksi/create'] = 'entities/kasir/transaksi/create';
+$route['kasir/transaksi/store'] = 'entities/kasir/transaksi/store';
+$route['kasir/transaksi/show/(:any)'] = 'entities/kasir/transaksi/show/$1';
+$route['kasir/transaksi/edit/(:any)'] = 'entities/kasir/transaksi/edit/$1';
+$route['kasir/transaksi/update/(:any)'] = 'entities/kasir/transaksi/update/$1';
+$route['kasir/transaksi/destroy/(:any)'] = 'entities/kasir/transaksi/destroy/$1';
+$route['kasir/transaksi/detail_create'] = 'entities/kasir/transaksi/detail_create/$1';
+$route['kasir/transaksi/detail_store'] = 'entities/kasir/transaksi/detail_store/$1';
+$route['kasir/transaksi/detail_edit/(:any)'] = 'entities/kasir/transaksi/detail_edit/$1';
+$route['kasir/transaksi/detail_update/(:any)'] = 'entities/kasir/transaksi/detail_update/$1';
+$route['kasir/transaksi/detail_destroy/(:any)'] = 'entities/kasir/transaksi/detail_destroy/$1';
+
+// -------------------------------------
+// CEO
+// -------------------------------------
+
+$route['ceo'] = 'entities/ceo/beranda/index';
+$route['ceo/beranda'] = 'entities/ceo/beranda/index';
+
+$route['ceo/planning'] = 'entities/ceo/planning/index';
+$route['ceo/planning/show/(:any)'] = 'entities/ceo/planning/show/$1';
+$route['ceo/planning/edit/(:any)'] = 'entities/ceo/planning/edit/$1';
+$route['ceo/planning/update/(:any)'] = 'entities/ceo/planning/update/$1';
+$route['ceo/planning/destroy/(:any)'] = 'entities/ceo/planning/destroy/$1';
+
+$route['manager/pengguna'] = 'entities/manager/pengguna/index';
+$route['manager/pengguna/create'] = 'entities/manager/pengguna/create';
+$route['manager/pengguna/store'] = 'entities/manager/pengguna/store';
+$route['manager/pengguna/show/(:any)'] = 'entities/manager/pengguna/show/$1';
+$route['manager/pengguna/edit/(:any)'] = 'entities/manager/pengguna/edit/$1';
+$route['manager/pengguna/update/(:any)'] = 'entities/manager/pengguna/update/$1';
+$route['manager/pengguna/destroy/(:any)'] = 'entities/manager/pengguna/destroy/$1';
+
 /*
 $route['posts/index'] = 'posts/index';
 $route['posts/create'] = 'posts/create';
