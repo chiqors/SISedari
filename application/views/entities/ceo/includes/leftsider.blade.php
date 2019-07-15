@@ -38,8 +38,8 @@
                         </p>
                     </a>
 				</li>
-				<li class="nav-item {{ @$activeMenu == 'planning' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('ceo/planning') }}" class="nav-link {{ @$activeMenu == 'planning' ? 'active' : '' }}">
+				<li class="nav-item {{ @$activeMenu == 'pengguna' ? 'menu-open' : '' }}">
+                    <a href="{{ site_url('ceo/pengguna') }}" class="nav-link {{ @$activeMenu == 'pengguna' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-users"></i>
                         <p>
                             Pengguna

@@ -1,4 +1,4 @@
-@extends('entities.ceo.layouts.panel',['activeMenu' => 'beranda'])
+@extends('entities.ceo.layouts.panel')
 
 @section('hstyles')
 

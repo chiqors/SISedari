@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.ceo.layouts.panel')
 
 @section('hstyles')
 
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Show Pengguna <small></small></h1>
+                    <h1>Tampil Pengguna <small></small></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ site_url('manager/pengguna') }}">Pengguna</a></li>
-                        <li class="breadcrumb-item active">Show Pengguna</li>
+                        <li class="breadcrumb-item"><a href="{{ site_url('ceo') }}">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="{{ site_url('ceo/pengguna') }}">Pengguna</a></li>
+                        <li class="breadcrumb-item active">Tampil Pengguna</li>
                     </ol>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title"><b>Pengguna Information</b></h3>
+                        <h3 class="card-title"><b>Informasi Pengguna</b></h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                 <i class="fa fa-minus"></i></button>
@@ -72,8 +72,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('manager/pengguna/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
-						<a class="btn btn-danger" href="{{ site_url('manager/pengguna/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
+						<a class="btn btn-warning" href="{{ site_url('ceo/pengguna/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('ceo/pengguna/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>

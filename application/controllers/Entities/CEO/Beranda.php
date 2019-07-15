@@ -5,6 +5,7 @@ class Beranda extends CI_Controller {
 	public function index()
 	{
 		$data = array(
+			'activeMenu' => 'beranda',
             'title' => 'Beranda'
         );
 		$this->slice->view('entities.ceo.pages.beranda', $data);

@@ -20,15 +20,15 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @include('entities.manager.includes.header')
-        @include('entities.manager.includes.leftsider')
+        @include('entities.kasir.includes.header')
+        @include('entities.kasir.includes.leftsider')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @include('entities.manager.includes.messages')
+            @include('entities.kasir.includes.messages')
             @yield('content')
         </div>
         <!-- /.content-wrapper -->
-        @include('entities.manager.includes.footer')
+        @include('entities.kasir.includes.footer')
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->

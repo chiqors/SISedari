@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.kasir.layouts.panel')
 
 @section('hstyles')
 <!-- DataTables -->
@@ -15,8 +15,8 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ site_url('manager/transaksi') }}">Transaksi</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('kasir') }}">Beranda</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('kasir/transaksi') }}">Transaksi</a></li>
                     <li class="breadcrumb-item active">Data Detail Transaksi</li>
                 </ol>
             </div>
@@ -45,7 +45,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('manager/transaksi/detail_create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Transaksi</a>
+										<a href="{{ site_url('manager/transaksi/detail_create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Transaksi</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -89,10 +89,10 @@
                                                 <i class="fa fa-chevron-circle-down"></i>
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('manager/transaksi/detail_edit/1') }}"><i
-                                                    class="fa fa-edit"></i> Edit</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('manager/transaksi/detail_destroy/1') }}"><i 
-													class="fa fa-trash"></i> Delete</a>
+                                                <a class="dropdown-item nav-warning" href="{{ site_url('kasir/transaksi/detail_edit/1') }}"><i
+                                                    class="fa fa-edit"></i> Ubah</a>
+												<a class="dropdown-item nav-danger" href="{{ site_url('kasir/transaksi/detail_destroy/1') }}"><i 
+													class="fa fa-trash"></i> Hapus</a>
                                             </div>
                                         </div>
                                     </td>

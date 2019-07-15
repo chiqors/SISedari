@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.ceo.layouts.panel')
 
 @section('hstyles')
     <link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.css') }}" />
@@ -10,13 +10,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>{{ @$info ? 'Edit' : 'Create' }} Pengguna <small></small></h1>
+                <h1>{{ @$info ? 'Ubah' : 'Tambah' }} Pengguna <small></small></h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ site_url('manager/pengguna') }}">Pengguna</a></li>
-                    <li class="breadcrumb-item active">{{ @$info ? 'Edit' : 'Create' }} Pengguna</li>
+					<li class="breadcrumb-item"><a href="{{ site_url('ceo') }}">Beranda</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('ceo/pengguna') }}">Pengguna</a></li>
+                    <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Pengguna</li>
                 </ol>
             </div>
         </div>
@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('manager/pengguna/edit/1') : site_url('manager/pengguna/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('ceo/pengguna/edit/1') : site_url('ceo/pengguna/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">

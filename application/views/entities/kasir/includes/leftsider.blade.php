@@ -11,7 +11,7 @@
         <div class="profile-canvas" style="background-image: linear-gradient(135deg,rgba(45,53,61,.79) 0,rgba(45,53,61,.5) 100%),url({{ asset('cpanel/img/bg.jpg') }})"></div>
         <a href="#" class="profile-link">
             <img src="{{ asset('cpanel/img/_kasir.png') }}" alt="Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text profile-text font-weight-light"><b>Manager</b> <i class="fa fa-cog"></i></span>
+            <span class="brand-text profile-text font-weight-light"><b>Kasir</b> <i class="fa fa-cog"></i></span>
         </a>
     </div>
 
@@ -30,8 +30,8 @@
                         </p>
                     </a>
 				</li>
-				<li class="nav-item {{ @$activeMenu == 'beranda' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('kasir/transaksi') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
+				<li class="nav-item {{ @$activeMenu == 'transaksi' ? 'menu-open' : '' }}">
+                    <a href="{{ site_url('kasir/transaksi') }}" class="nav-link {{ @$activeMenu == 'transaksi' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-exchange"></i>
                         <p>
                             Transaksi

@@ -49,12 +49,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'auth/login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['auth/login'] = 'auth/login';
-$route['dashboard'] = 'auth/login';
+$route['beranda'] = 'auth/login';
 
 // -------------------------------------
 // Manager
@@ -127,13 +127,13 @@ $route['ceo/planning/edit/(:any)'] = 'entities/ceo/planning/edit/$1';
 $route['ceo/planning/update/(:any)'] = 'entities/ceo/planning/update/$1';
 $route['ceo/planning/destroy/(:any)'] = 'entities/ceo/planning/destroy/$1';
 
-$route['manager/pengguna'] = 'entities/manager/pengguna/index';
-$route['manager/pengguna/create'] = 'entities/manager/pengguna/create';
-$route['manager/pengguna/store'] = 'entities/manager/pengguna/store';
-$route['manager/pengguna/show/(:any)'] = 'entities/manager/pengguna/show/$1';
-$route['manager/pengguna/edit/(:any)'] = 'entities/manager/pengguna/edit/$1';
-$route['manager/pengguna/update/(:any)'] = 'entities/manager/pengguna/update/$1';
-$route['manager/pengguna/destroy/(:any)'] = 'entities/manager/pengguna/destroy/$1';
+$route['ceo/pengguna'] = 'entities/ceo/pengguna/index';
+$route['ceo/pengguna/create'] = 'entities/ceo/pengguna/create';
+$route['ceo/pengguna/store'] = 'entities/ceo/pengguna/store';
+$route['ceo/pengguna/show/(:any)'] = 'entities/ceo/pengguna/show/$1';
+$route['ceo/pengguna/edit/(:any)'] = 'entities/ceo/pengguna/edit/$1';
+$route['ceo/pengguna/update/(:any)'] = 'entities/ceo/pengguna/update/$1';
+$route['ceo/pengguna/destroy/(:any)'] = 'entities/ceo/pengguna/destroy/$1';
 
 /*
 $route['posts/index'] = 'posts/index';

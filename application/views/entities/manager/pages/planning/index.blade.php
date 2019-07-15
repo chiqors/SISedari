@@ -44,7 +44,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('manager/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Planning</a>
+										<a href="{{ site_url('manager/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Planning</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -70,7 +70,7 @@
                                     <th>Judul</th>
                                     <th>Tanggal Promo</th>
                                     <th>NIP</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,20 +80,9 @@
                                     <td>14 July 2019 - 21 July 2019</td>
 									<td>10036432</td>
 									<td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-chevron-circle-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-show" href="{{ site_url('manager/planning/show/1') }}"><i
-                                                    class="fa fa-eye"></i> Show</a>
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('manager/planning/edit/1') }}"><i
-                                                    class="fa fa-edit"></i> Edit</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('manager/planning/destroy/1') }}"><i 
-													class="fa fa-trash"></i> Delete</a>
-                                            </div>
-                                        </div>
+										<a href="{{ site_url('manager/planning/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('manager/planning/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('manager/planning/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
                             </tbody>

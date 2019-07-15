@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.ceo.layouts.panel')
 
 @section('hstyles')
 <!-- DataTables -->
@@ -15,7 +15,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="{{ site_url('ceo') }}">Beranda</a></li>
                     <li class="breadcrumb-item active">Data Planning</li>
                 </ol>
             </div>
@@ -44,7 +44,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('manager/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Planning</a>
+										<a href="{{ site_url('ceo/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Planning</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -80,20 +80,9 @@
                                     <td>14 July 2019 - 21 July 2019</td>
 									<td>10036432</td>
 									<td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-chevron-circle-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-show" href="{{ site_url('manager/planning/show/1') }}"><i
-                                                    class="fa fa-eye"></i> Show</a>
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('manager/planning/edit/1') }}"><i
-                                                    class="fa fa-edit"></i> Edit</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('manager/planning/destroy/1') }}"><i 
-													class="fa fa-trash"></i> Delete</a>
-                                            </div>
-                                        </div>
+										<a href="{{ site_url('ceo/planning/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('ceo/planning/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('ceo/planning/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
                             </tbody>

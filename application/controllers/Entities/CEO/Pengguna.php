@@ -6,32 +6,31 @@ class Pengguna extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'activeMenu' => 'entities',
-			'activeSubMenu' => 'pengguna',
+			'activeMenu' => 'pengguna',
             'title' => 'Pengguna'
         );
-		$this->slice->view('entities.manager.pages.pengguna.index', $data);
+		$this->slice->view('entities.ceo.pages.pengguna.index', $data);
 	}
 
 	public function create() {
 		$data = array(
-            'title' => 'Create Pengguna'
+            'title' => 'Tambah Pengguna'
         );
-		$this->slice->view('entities.manager.pages.pengguna.form', $data);
+		$this->slice->view('entities.ceo.pages.pengguna.form', $data);
 	}
 
 	public function show($id) {
 		$data = array(
-            'title' => 'Show Pengguna'
+            'title' => 'Tampil Pengguna'
         );
-		$this->slice->view('entities.manager.pages.pengguna.show', $data);
+		$this->slice->view('entities.ceo.pages.pengguna.show', $data);
 	}
 
 	public function edit($id) {
 		$data = array(
 			'info' => 'edit',
-            'title' => 'Edit Pengguna'
+            'title' => 'Ubah Pengguna'
         );
-		$this->slice->view('entities.manager.pages.pengguna.form', $data);
+		$this->slice->view('entities.ceo.pages.pengguna.form', $data);
 	}
 }

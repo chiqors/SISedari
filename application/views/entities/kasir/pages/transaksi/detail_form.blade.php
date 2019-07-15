@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.kasir.layouts.panel')
 
 @section('hstyles')
     <link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.css') }}" />
@@ -10,14 +10,14 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>{{ @$info ? 'Edit' : 'Create' }} Transaksi <small></small></h1>
+                <h1>{{ @$info ? 'Ubah' : 'Tambah' }} Transaksi <small></small></h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
-					<li class="breadcrumb-item"><a href="{{ site_url('manager/transaksi') }}">Transaksi</a></li>
-					<li class="breadcrumb-item"><a href="{{ site_url('manager/transaksi/detail') }}">Detail Transaksi</a></li>
-                    <li class="breadcrumb-item active">{{ @$info ? 'Edit' : 'Create' }} Detail Transaksi</li>
+					<li class="breadcrumb-item"><a href="{{ site_url('kasir') }}">Beranda</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('kasir/transaksi') }}">Transaksi</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('kasir/transaksi/detail') }}">Detail Transaksi</a></li>
+                    <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Detail Transaksi</li>
                 </ol>
             </div>
         </div>
@@ -27,7 +27,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('manager/transaksi/edit/1') : site_url('manager/transaksi/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('kasir/transaksi/edit/1') : site_url('kasir/transaksi/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">

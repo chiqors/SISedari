@@ -72,7 +72,7 @@
                                     <th>Kontak (No. HP)</th>
 									<th>Jabatan</th>
 									<th>Username</th>
-									<th>Action</th>
+									<th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,20 +84,9 @@
 									<td>Kasir</td>
 									<td>setiawan1</td>
 									<td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-chevron-circle-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-show" href="{{ site_url('manager/pengguna/show/1') }}"><i
-                                                    class="fa fa-eye"></i> Tampil</a>
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('manager/pengguna/edit/1') }}"><i
-                                                    class="fa fa-edit"></i> Ubah</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('manager/pengguna/destroy/1') }}"><i 
-													class="fa fa-trash"></i> Hapus</a>
-                                            </div>
-                                        </div>
+										<a href="{{ site_url('manager/pengguna/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('manager/pengguna/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('manager/pengguna/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
                             </tbody>

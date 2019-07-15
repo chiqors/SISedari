@@ -1,4 +1,4 @@
-@extends('entities.manager.layouts.panel')
+@extends('entities.kasir.layouts.panel')
 
 @section('hstyles')
 
@@ -10,13 +10,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Show Transaksi <small></small></h1>
+                    <h1>Tampil Transaksi <small></small></h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item"><a href="{{ site_url('manager/transaksi') }}">Transaksi</a></li>
-                        <li class="breadcrumb-item active">Show Transaksi</li>
+                        <li class="breadcrumb-item"><a href="{{ site_url('kasir') }}">Beranda</a></li>
+                        <li class="breadcrumb-item"><a href="{{ site_url('kasir/transaksi') }}">Transaksi</a></li>
+                        <li class="breadcrumb-item active">Tampil Transaksi</li>
                     </ol>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title"><b>Transaksi Information</b></h3>
+                        <h3 class="card-title"><b>Informasi Transaksi</b></h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                 <i class="fa fa-minus"></i></button>
@@ -70,7 +70,7 @@
             <div class="col-md-12">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title"><b>Pembayaran Information</b></h3>
+                        <h3 class="card-title"><b>Informasi Pembayaran</b></h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                                 <i class="fa fa-minus"></i></button>
@@ -97,8 +97,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('manager/transaksi/edit/1') }}"><i class="fa fa-edit"></i> Edit</a>
-						<a class="btn btn-danger" href="{{ site_url('manager/transaksi/destroy/1') }}"><i class="fa fa-trash"></i> Delete</a>
+						<a class="btn btn-warning" href="{{ site_url('kasir/transaksi/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('kasir/transaksi/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('manager/transaksi/detail_create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> New Transaksi</a>
+										<a href="{{ site_url('kasir/transaksi/detail_create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Transaksi</a>
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -161,18 +161,8 @@
 									<td>2</td>
 									<td>50000</td>
 									<td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fa fa-chevron-circle-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item nav-warning" href="{{ site_url('manager/transaksi/detail_edit/1') }}"><i
-                                                    class="fa fa-edit"></i> Edit</a>
-												<a class="dropdown-item nav-danger" href="{{ site_url('manager/transaksi/detail_destroy/1') }}"><i 
-													class="fa fa-trash"></i> Delete</a>
-                                            </div>
-                                        </div>
+										<a href="{{ site_url('kasir/transaksi/detail_edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('kasir/transaksi/detail_destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
                             </tbody>

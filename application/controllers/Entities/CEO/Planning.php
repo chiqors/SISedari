@@ -6,32 +6,31 @@ class Planning extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'activeMenu' => 'entities',
-			'activeSubMenu' => 'planning',
+			'activeMenu' => 'planning',
             'title' => 'Planning'
         );
-		$this->slice->view('entities.manager.pages.planning.index', $data);
+		$this->slice->view('entities.ceo.pages.planning.index', $data);
 	}
 
 	public function create() {
 		$data = array(
-            'title' => 'Create Planning'
+            'title' => 'Tambah Planning'
         );
-		$this->slice->view('entities.manager.pages.planning.form', $data);
+		$this->slice->view('entities.ceo.pages.planning.form', $data);
 	}
 
 	public function show($id) {
 		$data = array(
-            'title' => 'Show Planning'
+            'title' => 'Tampil Planning'
         );
-		$this->slice->view('entities.manager.pages.planning.show', $data);
+		$this->slice->view('entities.ceo.pages.planning.show', $data);
 	}
 
 	public function edit($id) {
 		$data = array(
 			'info' => 'edit',
-            'title' => 'Edit Planning'
+            'title' => 'Ubah Planning'
         );
-		$this->slice->view('entities.manager.pages.planning.form', $data);
+		$this->slice->view('entities.ceo.pages.planning.form', $data);
 	}
 }

@@ -6,36 +6,35 @@ class Transaksi extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'activeMenu' => 'entities',
-			'activeSubMenu' => 'transaksi',
+			'activeMenu' => 'transaksi',
             'title' => 'Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.index', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.index', $data);
 	}
 
 	public function create() 
 	{
 		$data = array(
-            'title' => 'Create Transaksi'
+            'title' => 'Tambah Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.form', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.form', $data);
 	}
 
 	public function show($id) 
 	{
 		$data = array(
-            'title' => 'Show Transaksi'
+            'title' => 'Tampil Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.show', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.show', $data);
 	}
 
 	public function edit($id) 
 	{
 		$data = array(
 			'info' => 'edit',
-            'title' => 'Edit Transaksi'
+            'title' => 'Ubah Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.form', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.form', $data);
 	}
 
 	// DETAIL TRANSAKSI
@@ -43,27 +42,26 @@ class Transaksi extends CI_Controller {
 	public function detail()
 	{
 		$data = array(
-			'activeMenu' => 'entities',
-			'activeSubMenu' => 'transaksi',
+			'activeMenu' => 'detail_transaksi',
             'title' => 'Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.detail', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.detail', $data);
 	}
 
 	public function detail_create() 
 	{
 		$data = array(
-            'title' => 'Create Transaksi'
+            'title' => 'Tambah Detail Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.detail_form', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.detail_form', $data);
 	}
 
 	public function detail_edit($id) 
 	{
 		$data = array(
 			'info' => 'edit',
-            'title' => 'Edit Transaksi'
+            'title' => 'Ubah Detail Transaksi'
         );
-		$this->slice->view('entities.manager.pages.transaksi.detail_form', $data);
+		$this->slice->view('entities.kasir.pages.transaksi.detail_form', $data);
 	}
 }

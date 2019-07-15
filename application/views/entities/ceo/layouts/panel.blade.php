@@ -20,15 +20,15 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        @include('entities.manager.includes.header')
-        @include('entities.manager.includes.leftsider')
+        @include('entities.ceo.includes.header')
+        @include('entities.ceo.includes.leftsider')
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            @include('entities.manager.includes.messages')
+            @include('entities.ceo.includes.messages')
             @yield('content')
         </div>
         <!-- /.content-wrapper -->
-        @include('entities.manager.includes.footer')
+        @include('entities.ceo.includes.footer')
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
