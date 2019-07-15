@@ -72,7 +72,7 @@
                                     <th>Kontak (No. HP)</th>
 									<th>Jabatan</th>
 									<th>Username</th>
-									<th>Action</th>
+									<th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

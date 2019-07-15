@@ -70,7 +70,7 @@
                                     <th>Judul</th>
                                     <th>Tanggal Promo</th>
                                     <th>NIP</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
