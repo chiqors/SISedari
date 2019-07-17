@@ -94,6 +94,9 @@ $route['manager/pengguna/edit/(:any)'] = 'entities/manager/pengguna/edit/$1';
 $route['manager/pengguna/update/(:any)'] = 'entities/manager/pengguna/update/$1';
 $route['manager/pengguna/destroy/(:any)'] = 'entities/manager/pengguna/destroy/$1';
 
+$route['manager/transaksi'] = 'entities/manager/transaksi/index';
+$route['manager/transaksi/show/(:any)'] = 'entities/manager/transaksi/show/$1';
+
 // -------------------------------------
 // Kasir
 // -------------------------------------

@@ -11,12 +11,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Data Planning</h1>
+                <h1>Data Transaksi</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Beranda</a></li>
-                    <li class="breadcrumb-item active">Data Planning</li>
+                    <li class="breadcrumb-item active">Data Transaksi</li>
                 </ol>
             </div>
         </div>
@@ -29,7 +29,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Planning</h3>
+                    <h3 class="card-title">Transaksi</h3>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
                             <i class="fa fa-minus"></i></button>
@@ -44,17 +44,18 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('manager/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Planning</a>
+										
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="row float-right">
 										<label for="filter">
 											<select id="table-data-filter-column" class="form-control form-control-sm">
-												<option>Judul</option>
-												<option>Tanggal Promo Mulai</option>
-												<option>NIP</option>
-												<option>Status</option>
+												<option>Tanggal</option>
+												<option>Sub Total</option>
+												<option>Kupon</option>
+												<option>Total Harga</option>
+												<option>Kasir</option>
 											</select>
 										</label>
 									</div>
@@ -67,26 +68,26 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Judul</th>
-                                    <th>Tanggal Promo</th>
-									<th>NIP</th>
-									<th>Status</th>
+                                    <th>Tanggal</th>
+									<th>Sub Total</th>
+									<th>Kupon</th>
+									<th>Total Harga</th>
+									<th>Kasir (NIP)</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
 								@foreach($info as $info_data)
-								<tr>
-									<td>{{ $info_data->id }}</td>
-									<td>{{ $info_data->judul }}</td>
-									<td>{{ $info_data->tanggal_promo_mulai }} <-> {{ $info_data->tanggal_promo_selesai }}</td>
-									<td>{{ $info_data->nip_karyawan }}</td>
-									<td>{{ $info_data->status }}</td>
+                                <tr>
+									<td>{{ @$info_data->id }}</td>
+									<td>{{ @$info_data->tanggal }}</td>
+									<td>{{ @$info_data->sub_total }}</td>
+									<td>{{ @$info_data->kupon }}</td>
+									<td>{{ @$info_data->total_harga }}</td>
+									<td>{{ @$info_data->kasir }}</td>
 									<td>
-										<a href="{{ site_url('manager/planning/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
-										<a href="{{ site_url('manager/planning/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('manager/planning/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
-									</td>
+										<a href="{{ site_url('manager/transaksi/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a>
+                                    </td>
 								</tr>
 								@endforeach
                             </tbody>

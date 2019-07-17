@@ -53,7 +53,15 @@
                             Planning
                         </p>
                     </a>
-                </li>
+				</li>
+				<li class="nav-item {{ @$activeMenu == 'transaksi' ? 'menu-open' : '' }}">
+						<a href="{{ site_url('manager/transaksi') }}" class="nav-link {{ @$activeMenu == 'transaksi' ? 'active' : '' }}">
+							<i class="nav-icon fa fa-exchange"></i>
+							<p>
+								Transaksi
+							</p>
+						</a>
+					</li>
 				<li class="nav-item {{ @$activeMenu == 'pengguna' ? 'menu-open' : '' }}">
                     <a href="{{ site_url('manager/pengguna') }}" class="nav-link {{ @$activeMenu == 'pengguna' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-users"></i>

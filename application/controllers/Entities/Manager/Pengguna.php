@@ -93,6 +93,10 @@ class Pengguna extends CI_Controller {
 
 	public function destroy($id)
 	{
+		$data_get = $this->pengguna_model->get_data($id);
+		if ($data_get->jabatan == 'CEO') {
+			redirect('manager/pengguna');
+		}
 		$this->pengguna_model->destroy($id);
 		$this->session->set_flashdata('success', 'Pengguna '.$id.' telah terhapus');
 		redirect('manager/pengguna');
