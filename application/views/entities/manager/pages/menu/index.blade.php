@@ -74,17 +74,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+								@foreach($info as $info_data)
                                 <tr>
-									<td>1</td>
-                                    <td>Soto</td>
-                                    <td>20000</td>
-									<td>10</td>
+									<td>{{ $info_data->id }}</td>
+                                    <td>{{ $info_data->nama_menu }}</td>
+                                    <td>{{ $info_data->harga }}</td>
+									<td>{{ $info_data->stok }}</td>
 									<td>
-										<a href="{{ site_url('manager/menu/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
-										<a href="{{ site_url('manager/menu/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('manager/menu/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+										<a href="{{ site_url('manager/menu/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('manager/menu/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('manager/menu/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>

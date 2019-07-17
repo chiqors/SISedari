@@ -44,15 +44,15 @@
                                     <tbody>
                                         <tr>
                                             <td>Nama Menu</td>
-                                            <td>Soto</td>
+                                            <td>{{ $info->nama_menu }}</td>
                                         </tr>
                                         <tr>
                                             <td>Harga</td>
-                                            <td>20000</td>
+                                            <td>{{ $info->harga }}</td>
                                         </tr>
                                         <tr>
                                             <td>Stok Tersedia</td>
-                                            <td>10</td>
+                                            <td>{{ $info->stok }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -60,8 +60,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('manager/menu/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
-						<a class="btn btn-danger" href="{{ site_url('manager/menu/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
+						<a class="btn btn-warning" href="{{ site_url('manager/menu/edit/'.$info->id) }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('manager/menu/destroy/'.$info->id) }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>

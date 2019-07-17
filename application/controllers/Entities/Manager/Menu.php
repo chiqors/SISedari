@@ -5,7 +5,9 @@ class Menu extends CI_Controller {
 	
 	public function index()
 	{
+		$data_get = $this->menu_model->get_list();
 		$data = array(
+			'info' => $data_get,
 			'activeMenu' => 'menu',
             'title' => 'Menu'
         );
@@ -19,19 +21,61 @@ class Menu extends CI_Controller {
 		$this->slice->view('entities.manager.pages.menu.form', $data);
 	}
 
+	public function store()
+	{
+		$this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required');
+		$this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
+		$this->form_validation->set_rules('stok', 'Stok', 'required|numeric');
+
+		if($this->form_validation->run() === FALSE) {
+			$this->session->set_flashdata('error', validation_errors());
+			redirect('manager/menu/create');
+		} else {
+			$this->menu_model->store();
+			$this->session->set_flashdata('success', 'Menu baru telah ditambahkan');
+			redirect('manager/menu');
+		}
+	}
+
 	public function show($id) {
+		$data_get = $this->menu_model->get_data($id);
 		$data = array(
+			'info' => $data_get,
             'title' => 'Show Menu'
         );
 		$this->slice->view('entities.manager.pages.menu.show', $data);
 	}
 
 	public function edit($id) {
+		$data_get = $this->menu_model->get_data($id);
 		$data = array(
-			'info' => 'edit',
+			'info' => $data_get,
             'title' => 'Edit Menu'
         );
 		$this->slice->view('entities.manager.pages.menu.form', $data);
+	}
+
+	public function update($id)
+	{
+		$this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required');
+		$this->form_validation->set_rules('harga', 'Harga', 'required|numeric');
+		$this->form_validation->set_rules('stok', 'Stok', 'required|numeric');
+
+		if($this->form_validation->run() === FALSE) {
+			$this->session->set_flashdata('error', validation_errors());
+			redirect('manager/menu/edit/'.$id);
+		} else {
+			$this->menu_model->update($id);
+			$this->session->set_flashdata('success', 'Menu '.$id.' telah diperbaharui');
+			redirect('manager/menu');
+		}
+	}
+
+	public function destroy($id)
+	{
+		$this->menu_model->destroy($id);
+		$this->session->set_flashdata('success', 'Menu '.$id.' telah dihapus');
+		redirect('manager/kupon');
 	}
 
 	/*

@@ -51,6 +51,7 @@
 									<div class="row float-right">
 										<label for="filter">
 											<select id="table-data-filter-column" class="form-control form-control-sm">
+												<option>Tanggal Mulai</option>
 												<option>Tanggal Hangus</option>
 												<option>Diskon (%)</option>
 											</select>
@@ -64,22 +65,26 @@
                         <table id="table-data" class="table table-bordered table-striped text-center table-responsive-sm">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+									<th>#</th>
+									<th>Tanggal Mulai</th>
                                     <th>Tanggal Hangus</th>
                                     <th>Diskon</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
+								@foreach($info as $info_data)
                                 <tr>
-									<td>1</td>
-                                    <td>13 July 2019</td>
-                                    <td>25% (0.25)</td>
+									<td>{{ $info_data->id }}</td>
+									<td>{{ $info_data->tanggal_mulai }}</td>
+									<td>{{ $info_data->tanggal_hangus }}</td>
+                                    <td>{{ $info_data->diskon }}%</td>
 									<td>
-										<a href="{{ site_url('manager/kupon/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('manager/kupon/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+										<a href="{{ site_url('manager/kupon/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('manager/kupon/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>

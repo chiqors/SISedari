@@ -10,13 +10,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>{{ @$info ? 'Edit' : 'Create' }} Planning <small></small></h1>
+                <h1>{{ @$info ? 'Ubah' : 'Tambah' }} Planning <small></small></h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Beranda</a></li>
 					<li class="breadcrumb-item"><a href="{{ site_url('manager/planning') }}">Planning</a></li>
-                    <li class="breadcrumb-item active">{{ @$info ? 'Edit' : 'Create' }} Planning</li>
+                    <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Planning</li>
                 </ol>
             </div>
         </div>
@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('manager/planning/edit/1') : site_url('manager/planning/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('manager/planning/update/'.@$info->id) : site_url('manager/planning/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -51,15 +51,30 @@
                                     </div>
                                     <div class="form-group">
 										<label for="konten">Konten</label>
-                                        <textarea class="form-control" name="konten">{{ @$info ? @$info->konten : '' }}</textarea>
+                                        <textarea class="form-control" name="konten" placeholder="Konten">{{ @$info ? @$info->konten : '' }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="desc">Tanggal Promo Mulai</label>
-                                        <input type="text" class="form-control" name="tanggal_promo_mulai" value="{{ @$info ? @$info->tanggal_promo_mulai : '' }}">
+                                        <label for="tanggal_promo_mulai">Tanggal Promo Mulai</label>
+                                        <input type="text" class="form-control" name="tanggal_promo_mulai" placeholder="Format: YYYY-MM-DD" value="{{ @$info ? @$info->tanggal_promo_mulai : '' }}">
 									</div>
 									<div class="form-group">
-                                        <label for="desc">Tanggal Promo Selesai</label>
-                                        <input type="text" class="form-control" name="tanggal_promo_selesai" value="{{ @$info ? @$info->tanggal_promo_selesai : '' }}">
+                                        <label for="tanggal_promo_selesai">Tanggal Promo Selesai</label>
+                                        <input type="text" class="form-control" name="tanggal_promo_selesai" placeholder="Format: YYYY-MM-DD" value="{{ @$info ? @$info->tanggal_promo_selesai : '' }}">
+									</div>
+									<div class="form-group">
+                                        <label for="nip_karyawan">NIP Manager</label>
+                                        <input type="text" class="form-control" name="nip_karyawan" value="{{ @$info ? @$info->nip_karyawan : '10117054' }}" readonly>
+									</div>
+									<div class="form-group">
+										@if(@$info)
+										<label for="status">Status</label>
+										<select class="form-control" name="status">
+											<option value="Belum Disetujui">Belum Disetujui</option>
+											<option value="Ditolak">Ditolak</option>
+										</select>
+										@else
+										<input type="hidden" class="form-control" name="status" value="Belum Disetujui" readonly>
+										@endif
                                     </div>
                                 </div>
                             </div>

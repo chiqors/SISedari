@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('manager/kupon/edit/1') : site_url('manager/kupon/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('manager/kupon/update/'.@$info->id) : site_url('manager/kupon/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -45,13 +45,17 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-12">
+									<div class="form-group">
+                                        <label for="tanggal_hangus">Tanggal Mulai</label>
+                                        <input type="text" class="form-control" name="tanggal_mulai" value="{{ @$info ? @$info->tanggal_mulai : '' }}" placeholder="Format: YYYY-MM-DD">
+                                    </div>
                                     <div class="form-group">
                                         <label for="tanggal_hangus">Tanggal Hangus</label>
-                                        <input type="text" class="form-control" name="tanggal_hangus" value="{{ @$info ? @$info->tanggal_hangus : '' }}">
+                                        <input type="text" class="form-control" name="tanggal_hangus" value="{{ @$info ? @$info->tanggal_hangus : '' }}" placeholder="Format: YYYY-MM-DD">
                                     </div>
                                     <div class="form-group">
 										<label for="diskon">Diskon</label>
-                                        <input type="text" class="form-control" name="diskon" placeholder="diskon" value="{{ @$info ? @$info->slug : ''}}">
+                                        <input type="text" class="form-control" name="diskon" placeholder="Format: Numeric w/o coma for decimal" value="{{ @$info ? @$info->diskon : ''}}">
                                     </div>
                                 </div>
                             </div>

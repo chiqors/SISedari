@@ -76,19 +76,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+								@foreach($info as $info_data)
                                 <tr>
-									<td>10017223</td>
-                                    <td>Setiawan Gunadi</td>
-                                    <td>Jl. Rancaekek no 2</td>
-									<td>08125433545</td>
-									<td>Kasir</td>
-									<td>setiawan1</td>
+									<td>{{ $info_data->nip }}</td>
+                                    <td>{{ $info_data->nama }}</td>
+                                    <td>{{ $info_data->alamat }}</td>
+									<td>{{ $info_data->kontak }}</td>
+									<td>{{ $info_data->jabatan }}</td>
+									<td>{{ $info_data->username }}</td>
 									<td>
-										<a href="{{ site_url('manager/pengguna/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
-										<a href="{{ site_url('manager/pengguna/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('manager/pengguna/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+										<a href="{{ site_url('manager/pengguna/show/'.$info_data->nip) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('manager/pengguna/edit/'.$info_data->nip) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('manager/pengguna/destroy/'.$info_data->nip) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
 								</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>

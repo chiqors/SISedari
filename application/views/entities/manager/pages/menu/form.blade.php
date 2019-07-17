@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('manager/menu/edit/1') : site_url('manager/menu/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('manager/menu/update/'.@$info->id) : site_url('manager/menu/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -47,15 +47,15 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="nama_menu">Nama Menu</label>
-                                        <input type="text" class="form-control" name="nama_menu" placeholder="Nama Menu" value="{{ @$info ? @$info->title : '' }}">
+                                        <input type="text" class="form-control" name="nama_menu" placeholder="Nama Menu" value="{{ @$info ? @$info->nama_menu : '' }}">
                                     </div>
                                     <div class="form-group">
 										<label for="Harga">Harga</label>
-                                        <input type="text" class="form-control" name="harga" placeholder="Harga" value="{{ @$info->slug }}">
+                                        <input type="text" class="form-control" name="harga" placeholder="Harga" value="{{ @$info->harga }}">
                                     </div>
                                     <div class="form-group">
                                         <label for="desc">Stok Tersedia</label>
-                                        <input type="text" class="form-control" name="stok" placeholder="Stok Tersedia" value="{{ @$info ? @$info->description : '' }}">
+                                        <input type="text" class="form-control" name="stok" placeholder="Stok Tersedia" value="{{ @$info ? @$info->stok : '' }}">
                                     </div>
                                 </div>
                             </div>

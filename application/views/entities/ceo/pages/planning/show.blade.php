@@ -16,7 +16,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ site_url('ceo') }}">Beranda</a></li>
                         <li class="breadcrumb-item"><a href="{{ site_url('ceo/planning') }}">Planning</a></li>
-                        <li class="breadcrumb-item active">Show Planning</li>
+                        <li class="breadcrumb-item active">Tampil Planning</li>
                     </ol>
                 </div>
             </div>
