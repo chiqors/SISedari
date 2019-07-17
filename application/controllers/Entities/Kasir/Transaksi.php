@@ -39,15 +39,6 @@ class Transaksi extends CI_Controller {
 
 	// DETAIL TRANSAKSI
 
-	public function detail()
-	{
-		$data = array(
-			'activeMenu' => 'detail_transaksi',
-            'title' => 'Transaksi'
-        );
-		$this->slice->view('entities.kasir.pages.transaksi.detail', $data);
-	}
-
 	public function detail_create() 
 	{
 		$data = array(

@@ -42,29 +42,29 @@
                             <div class="col-md-12">
                                 <table class="table table-user-information">
                                     <tbody>
+										<tr>
+											<td>NIP</td>
+											<td>{{ $info->nip }}</td>
+										</tr>
                                         <tr>
                                             <td>Nama Lengkap</td>
-                                            <td>Setiawan Gunadi</td>
+                                            <td>{{ $info->nama }}</td>
                                         </tr>
                                         <tr>
                                             <td>Alamat</td>
-                                            <td>Jl. Rancaekek no 2</td>
+                                            <td>{{ $info->alamat }}</td>
                                         </tr>
                                         <tr>
                                             <td>Kontak</td>
-                                            <td>07842342345</td>
+                                            <td>{{ $info->kontak }}</td>
 										</tr>
 										<tr>
 											<td>Jabatan</td>
-											<td>Kasir</td>
+											<td>{{ $info->jabatan }}</td>
 										</tr>
 										<tr>
 											<td>Username</td>
-											<td>setiawan1</td>
-										</tr>
-										<tr>
-											<td>Password</td>
-											<td><button class="btn btn-info btn-xs show-pw"><i class="fa fa-eye"></i> Show</button></td>
+											<td>{{ $info->username }}</td>
 										</tr>
                                     </tbody>
                                 </table>
@@ -72,8 +72,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('ceo/pengguna/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
-						<a class="btn btn-danger" href="{{ site_url('ceo/pengguna/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
+						<a class="btn btn-warning" href="{{ site_url('ceo/pengguna/edit/'.$info->nip) }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('ceo/pengguna/destroy/'.$info->nip) }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>

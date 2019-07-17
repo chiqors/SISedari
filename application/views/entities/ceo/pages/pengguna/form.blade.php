@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('ceo/pengguna/edit/1') : site_url('ceo/pengguna/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('ceo/pengguna/update/'.$info->nip) : site_url('ceo/pengguna/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -45,6 +45,10 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-lg-12">
+									<div class="form-group">
+										<label for="nip">NIP</label>
+										<input type="text" class="form-control" name="nip" placeholder="NIP" value="{{ @$info ? @$info->nip : '' }}" {{ @$info ? 'readonly' : '' }}>
+									</div>
                                     <div class="form-group">
                                         <label for="nama_lengkap">Nama Lengkap</label>
                                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" value="{{ @$info ? @$info->nama : '' }}">
@@ -52,13 +56,17 @@
                                     <div class="form-group">
 										<label for="alamat">Alamat</label>
                                         <textarea class="form-control" name="alamat" placeholder="Alamat">{{ @$info ? @$info->alamat : '' }}</textarea>
-                                    </div>
+									</div>
+									<div class="form-group">
+										<label for="kontak">Kontak</label>
+										<input type="text" class="form-control" name="kontak" placeholder="Kontak" value="{{ @$info ? @$info->kontak : '' }}">
+									</div>
                                     <div class="form-group">
                                         <label for="jabatan">Jabatan</label>
                                         <select class="form-control" name="jabatan">
-											<option value="kasir">Kasir</option>
-											<option value="manager">Manajer</option>
-											<option value="ceo">CEO</option>
+											<option value="Kasir" {{ @$info->jabatan == "Kasir" ? 'selected' : '' }}>Kasir</option>
+											<option value="Manager" {{ @$info->jabatan == "Manager" ? 'selected' : '' }}>Manajer</option>
+											<option value="CEO" {{ @$info->jabatan == "CEO" ? 'selected' : '' }}>CEO</option>
 										</select>
 									</div>
 									<div class="form-group">
@@ -67,11 +75,11 @@
 									</div>
 									<div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="text" class="form-control" name="password" placeholder="Password">
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
 									</div>
 									<div class="form-group">
                                         <label for="confirm_password">Confirm Password</label>
-                                        <input type="text" class="form-control" name="confirm_password" placeholder="Confirm Password">
+                                        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password">
                                     </div>
                                 </div>
                             </div>

@@ -44,24 +44,32 @@
                                     <tbody>
                                         <tr>
                                             <td>Judul</td>
-                                            <td>Promo Buy One Get One</td>
+                                            <td>{{ $info->judul }}</td>
+										</tr>
+										<tr>
+                                            <td>Konten</td>
+                                            <td>{{ $info->konten }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Isi Konten</td>
-                                            <td>No thou floating bird such here agreeing he, a chamber eagerly have yore, of fancy stately sought i my, gave.</td>
+                                            <td>Tanggal Promo</td>
+                                            <td>{{ $info->tanggal_promo_mulai }} <-> {{ $info->tanggal_promo_selesai }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Stok Tersedia</td>
-                                            <td>10</td>
-                                        </tr>
+                                            <td>NIP Manager</td>
+                                            <td>{{ $info->nip_karyawan }}</td>
+										</tr>
+										<tr>
+											<td>Status</td>
+                                            <td>{{ $info->status }}</td>
+										</tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('ceo/planning/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
-						<a class="btn btn-danger" href="{{ site_url('ceo/planning/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
+						<a class="btn btn-warning" href="{{ site_url('ceo/planning/edit/'.$info->id) }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('ceo/planning/destroy/'.$info->id) }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>

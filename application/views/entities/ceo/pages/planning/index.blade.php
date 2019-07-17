@@ -44,7 +44,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('ceo/planning/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Planning</a>
+										<!-- -->
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -69,22 +69,26 @@
                                     <th>#</th>
                                     <th>Judul</th>
                                     <th>Tanggal Promo</th>
-                                    <th>NIP</th>
+									<th>NIP</th>
+									<th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-									<td>1</td>
-                                    <td>Promo Buy One Get One</td>
-                                    <td>14 July 2019 - 21 July 2019</td>
-									<td>10036432</td>
+								@foreach($info as $info_data)
+								<tr>
+									<td>{{ $info_data->id }}</td>
+									<td>{{ $info_data->judul }}</td>
+									<td>{{ $info_data->tanggal_promo_mulai }} - {{ $info_data->tanggal_promo_selesai }}</td>
+									<td>{{ $info_data->nip_karyawan }}</td>
+									<td>{{ $info_data->status }}</td>
 									<td>
-										<a href="{{ site_url('ceo/planning/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
-										<a href="{{ site_url('ceo/planning/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('ceo/planning/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
-                                    </td>
+										<a href="{{ site_url('ceo/planning/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('ceo/planning/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('ceo/planning/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+									</td>
 								</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>

@@ -26,7 +26,7 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <form role="form" action="{{ @$info ? site_url('ceo/planning/edit/1') : site_url('ceo/planning/store') }}" enctype="multipart/form-data" method="POST">
+        <form role="form" action="{{ @$info ? site_url('ceo/planning/update/'.@$info->id) : site_url('ceo/planning/store') }}" enctype="multipart/form-data" method="POST">
             <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
@@ -47,19 +47,31 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="judul">Judul</label>
-                                        <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{ @$info ? @$info->judul : '' }}">
+                                        <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{ @$info ? @$info->judul : '' }}" readonly>
                                     </div>
                                     <div class="form-group">
 										<label for="konten">Konten</label>
-                                        <textarea class="form-control" name="konten">{{ @$info ? @$info->konten : '' }}</textarea>
+                                        <textarea class="form-control" name="konten" readonly>{{ @$info ? @$info->konten : '' }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="desc">Tanggal Promo Mulai</label>
+                                        <label for="tanggal_promo_mulai">Tanggal Promo Mulai</label>
                                         <input type="text" class="form-control" name="tanggal_promo_mulai" value="{{ @$info ? @$info->tanggal_promo_mulai : '' }}">
 									</div>
 									<div class="form-group">
-                                        <label for="desc">Tanggal Promo Selesai</label>
+                                        <label for="tanggal_promo_selesai">Tanggal Promo Selesai</label>
                                         <input type="text" class="form-control" name="tanggal_promo_selesai" value="{{ @$info ? @$info->tanggal_promo_selesai : '' }}">
+									</div>
+									<div class="form-group">
+                                        <label for="nip_karyawan">NIP Manager</label>
+                                        <input type="text" class="form-control" name="nip_karyawan" value="{{ @$info ? @$info->nip_karyawan : '' }}" readonly>
+									</div>
+									<div class="form-group">
+										<label for="status">Status?</label>
+										<select class="form-control" name="status">
+											<option value="Belum Disetujui" {{ (@$info == 'Belum Disetujui') ? 'selected' : '' }}>Belum Disetujui</option>
+											<option value="Ditolak" {{ (@$info == 'Ditolak') ? 'selected' : '' }}>Ditolak</option>
+											<option value="Disetujui" {{ (@$info == 'Belum Disetujui') ? 'selected' : '' }}>Disetujui</option>
+										</select>
                                     </div>
                                 </div>
                             </div>
