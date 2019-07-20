@@ -12,13 +12,13 @@
 
 			<form action="{{ site_url('auth/do_login') }}" method="post">
 				<div class="input-group mb-3">
-					<input type="email" class="form-control" placeholder="Email">
+					<input type="text" class="form-control" name="username" placeholder="Username">
 					<div class="input-group-append">
-						<span class="fa fa-envelope input-group-text"></span>
+						<span class="fa fa-user input-group-text"></span>
 					</div>
 				</div>
 				<div class="input-group mb-3">
-					<input type="password" class="form-control" placeholder="Password">
+					<input type="password" class="form-control" name="password" placeholder="Password">
 					<div class="input-group-append">
 						<span class="fa fa-lock input-group-text"></span>
 					</div>

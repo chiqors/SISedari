@@ -102,8 +102,8 @@
 
 @section('fscripts')
 <!-- DataTables -->
-<script src="{{ asset('admin/vendor/datatables/jquery.dataTables.js') }}"></script>
-<script src="{{ asset('admin/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+<script src="{{ asset('cpanel/vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('cpanel/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
 <!-- Page Script -->
 <script>
 $(document).ready(function() {

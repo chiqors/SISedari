@@ -2,7 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Menu extends CI_Controller {
-	
+
+	public function __construct()
+	{
+		parent::__construct();
+		if ($this->session->jabatan != 'Manager') {
+			redirect('auth/login');
+		}
+	}
+
 	public function index()
 	{
 		$data_get = $this->menu_model->get_list();
@@ -16,7 +24,7 @@ class Menu extends CI_Controller {
 
 	public function create() {
 		$data = array(
-            'title' => 'Create Menu'
+            'title' => 'Tambah Menu'
         );
 		$this->slice->view('entities.manager.pages.menu.form', $data);
 	}
@@ -41,7 +49,7 @@ class Menu extends CI_Controller {
 		$data_get = $this->menu_model->get_data($id);
 		$data = array(
 			'info' => $data_get,
-            'title' => 'Show Menu'
+            'title' => 'Tampil Menu #'.$id
         );
 		$this->slice->view('entities.manager.pages.menu.show', $data);
 	}
@@ -50,7 +58,7 @@ class Menu extends CI_Controller {
 		$data_get = $this->menu_model->get_data($id);
 		$data = array(
 			'info' => $data_get,
-            'title' => 'Edit Menu'
+            'title' => 'Ubah Menu #'.$id
         );
 		$this->slice->view('entities.manager.pages.menu.form', $data);
 	}

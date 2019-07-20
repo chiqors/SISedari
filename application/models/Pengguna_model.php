@@ -24,6 +24,14 @@ class Pengguna_model extends CI_Model {
 		return $query->row();
 	}
 
+	public function do_login()
+	{
+		$this->db->where('username', $this->input->post('username'));
+		$this->db->where('password', md5($this->input->post('password')));
+		$query = $this->db->get('pengguna');
+		return $query->row();
+	}
+
 	public function store()
 	{
 		$data = array(

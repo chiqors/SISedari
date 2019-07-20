@@ -54,6 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['auth/login'] = 'auth/login';
+$route['auth/logout'] = 'auth/logout';
 $route['beranda'] = 'auth/login';
 
 // -------------------------------------

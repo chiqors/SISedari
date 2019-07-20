@@ -11,7 +11,7 @@
         <div class="profile-canvas" style="background-image: linear-gradient(135deg,rgba(45,53,61,.79) 0,rgba(45,53,61,.5) 100%),url({{ asset('cpanel/img/bg.jpg') }})"></div>
         <a href="#" class="profile-link">
             <img src="{{ asset('cpanel/img/_ceo.png') }}" alt="Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text profile-text font-weight-light"><b>CEO</b> <i class="fa fa-cog"></i></span>
+            <span class="brand-text profile-text font-weight-light"><b>{{ $this->session->username }}</b> <i class="fa fa-cog"></i></span>
         </a>
     </div>
 
