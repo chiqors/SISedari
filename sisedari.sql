@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 20, 2019 at 02:09 PM
+-- Generation Time: Jul 28, 2019 at 02:45 AM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.11
 
@@ -36,14 +36,6 @@ CREATE TABLE `detail_transaksi` (
   `total_harga` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `detail_transaksi`
---
-
-INSERT INTO `detail_transaksi` (`id`, `id_transaksi`, `id_menu`, `jumlah_beli`, `total_harga`) VALUES
-(1, 1, 1, 2, 50000),
-(2, 1, 2, 1, 20000);
-
 -- --------------------------------------------------------
 
 --
@@ -64,7 +56,8 @@ CREATE TABLE `kupon` (
 INSERT INTO `kupon` (`id`, `tanggal_mulai`, `tanggal_hangus`, `diskon`) VALUES
 (3, '2019-07-17', '2019-07-20', 10),
 (4, '2019-07-18', '2019-07-19', 5),
-(5, '2019-07-17', '2019-07-18', 5);
+(5, '2019-07-17', '2019-07-18', 5),
+(6, '2019-07-28', '2019-07-31', 10);
 
 -- --------------------------------------------------------
 
@@ -85,7 +78,8 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `nama_menu`, `harga`, `stok`) VALUES
 (1, 'Soto Betawi', 25000, 100),
-(2, 'Soto Ayam Sunda', 20000, 95);
+(2, 'Soto Ayam Sunda', 20000, 95),
+(3, 'Soto Boyolali', 15000, 25);
 
 -- --------------------------------------------------------
 
@@ -154,13 +148,6 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `transaksi`
---
-
-INSERT INTO `transaksi` (`id`, `tanggal`, `sub_total`, `kupon`, `total_harga`, `bayar`, `kembalian`, `kasir`) VALUES
-(1, '2019-07-17 05:00:00', 100000, 1, 90000, 100000, 10000, '10117054');
-
---
 -- Indexes for dumped tables
 --
 
@@ -168,7 +155,9 @@ INSERT INTO `transaksi` (`id`, `tanggal`, `sub_total`, `kupon`, `total_harga`, `
 -- Indexes for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_menu` (`id_menu`),
+  ADD KEY `id_transaksi` (`id_transaksi`);
 
 --
 -- Indexes for table `kupon`
@@ -211,19 +200,19 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `detail_transaksi`
 --
 ALTER TABLE `detail_transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `kupon`
 --
 ALTER TABLE `kupon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `planning`
@@ -235,11 +224,18 @@ ALTER TABLE `planning`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `detail_transaksi`
+--
+ALTER TABLE `detail_transaksi`
+  ADD CONSTRAINT `detail_transaksi_ibfk_1` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id`),
+  ADD CONSTRAINT `detail_transaksi_ibfk_2` FOREIGN KEY (`id_transaksi`) REFERENCES `transaksi` (`id`);
 
 --
 -- Constraints for table `planning`
@@ -251,7 +247,8 @@ ALTER TABLE `planning`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`kasir`) REFERENCES `pengguna` (`nip`);
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`kasir`) REFERENCES `pengguna` (`nip`),
+  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`kupon`) REFERENCES `kupon` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
