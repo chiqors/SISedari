@@ -1,7 +1,7 @@
 @extends('entities.ceo.layouts.panel')
 
 @section('hstyles')
-    <link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('cpanel/vendor/bootstrap-datetimepicker/tempusdominus-bootstrap-4.min.css') }}" />
 @endsection
 
 @section('content')
@@ -54,12 +54,22 @@
                                         <textarea class="form-control" name="konten" readonly>{{ @$info ? @$info->konten : '' }}</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="tanggal_promo_mulai">Tanggal Promo Mulai</label>
-                                        <input type="text" class="form-control" name="tanggal_promo_mulai" value="{{ @$info ? @$info->tanggal_promo_mulai : '' }}">
+										<label for="tanggal_promo_mulai">Tanggal Promo Mulai</label>
+										<div class="input-group date" id="tanggalpromomulai" data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input" name="tanggal_promo_mulai" data-target="#tanggalpromomulai" value="{{ @$info ? @$info->tanggal_promo_mulai : '' }}" readonly/>
+											<div class="input-group-append" data-target="#tanggalpromomulai" data-toggle="datetimepicker">
+												<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+											</div>
+										</div>
 									</div>
 									<div class="form-group">
                                         <label for="tanggal_promo_selesai">Tanggal Promo Selesai</label>
-                                        <input type="text" class="form-control" name="tanggal_promo_selesai" value="{{ @$info ? @$info->tanggal_promo_selesai : '' }}">
+                                        <div class="input-group date" id="tanggalpromoselesai" data-target-input="nearest">
+											<input type="text" class="form-control datetimepicker-input" name="tanggal_promo_selesai" data-target="#tanggalpromoselesai" value="{{ @$info ? @$info->tanggal_promo_selesai : '' }}" readonly/>
+											<div class="input-group-append" data-target="#tanggalpromoselesai" data-toggle="datetimepicker">
+												<div class="input-group-text"><i class="fa fa-calendar"></i></div>
+											</div>
+										</div>
 									</div>
 									<div class="form-group">
                                         <label for="nip_karyawan">NIP Manager</label>
@@ -92,8 +102,12 @@
 @section('fscripts')
     <script type="text/javascript">
         $(function () {
-            $('#datetimepicker1').datetimepicker({
-                format : 'YYYY-MM-DD hh:mm:ss',
+            $('#tanggalpromomulai').datetimepicker({
+                format : 'YYYY-MM-DD',
+                ignoreReadonly: true
+            });
+			$('#tanggalpromoselesai').datetimepicker({
+                format : 'YYYY-MM-DD',
                 ignoreReadonly: true
             });
         });

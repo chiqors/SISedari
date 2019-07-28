@@ -111,45 +111,12 @@
 <!-- Page Script -->
 <script>
 $(document).ready(function() {
-    var groupColumn = 1;
-    var table = $('#table-data').DataTable({
-        "columnDefs": [
-            { "visible": false, "targets": groupColumn }
-        ],
-        "order": [[ groupColumn, 'asc' ]],
-        "displayLength": 25,
-        "drawCallback": function ( settings ) {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-
-            api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="7"><b>'+group+'</b></td></tr>'
-                    );
-
-                    last = group;
-                }
-            } );
-        }
-    } );
+    var table = $('#table-data').DataTable();
 
     $('.dataTables_filter input').unbind().bind('keyup', function() {
         var colIndex = document.querySelector('#table-data-filter-column').selectedIndex;
         table.column( colIndex).search( this.value ).draw();
     });
-
-    // Order by the grouping
-    $('#table-data tbody').on( 'click', 'tr.group', function () {
-        var currentOrder = table.order()[0];
-        if ( currentOrder[0] === groupColumn && currentOrder[1] === 'asc' ) {
-            table.order( [ groupColumn, 'desc' ] ).draw();
-        }
-        else {
-            table.order( [ groupColumn, 'asc' ] ).draw();
-        }
-    } );
 } );
 </script>
 @endsection

@@ -1,7 +1,8 @@
 @extends('entities.kasir.layouts.panel')
 
 @section('hstyles')
-
+<!-- DataTables -->
+<link rel="stylesheet" href="{{ asset('cpanel/vendor/datatables/dataTables.bootstrap4.css') }}">
 @endsection
 
 @section('content')
@@ -44,19 +45,19 @@
                                     <tbody>
                                         <tr>
                                             <td>Tanggal Transaksi</td>
-                                            <td>14 July 2019 - 14:30:00</td>
+                                            <td>{{ $info->tanggal }}</td>
                                         </tr>
                                         <tr>
                                             <td>Sub Total</td>
-                                            <td>150000</td>
+                                            <td>{{ $info->sub_total }}</td>
                                         </tr>
                                         <tr>
                                             <td>Kupon</td>
-                                            <td>Kupon #1 - 25%</td>
+                                            <td>{{ $info->kupon }}</td>
 										</tr>
 										<tr>
 											<td>Total Harga</td>
-											<td>125000</td>
+											<td>{{ $info->total_harga }}</td>
 										</tr>
                                     </tbody>
                                 </table>
@@ -85,11 +86,11 @@
                                     <tbody>
                                         <tr>
                                             <td>Bayar</td>
-                                            <td>200000</td>
+                                            <td>{{ $info->bayar }}</td>
                                         </tr>
                                         <tr>
                                             <td>Kembalian</td>
-                                            <td>50000</td>
+                                            <td>{{ $info->kembalian }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -97,8 +98,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-						<a class="btn btn-warning" href="{{ site_url('kasir/transaksi/edit/1') }}"><i class="fa fa-edit"></i> Ubah</a>
-						<a class="btn btn-danger" href="{{ site_url('kasir/transaksi/destroy/1') }}"><i class="fa fa-trash"></i> Hapus</a>
+						<a class="btn btn-warning" href="{{ site_url('kasir/transaksi/edit/'.$info->id) }}"><i class="fa fa-edit"></i> Ubah</a>
+						<a class="btn btn-danger" href="{{ site_url('kasir/transaksi/destroy/'.$info->id) }}"><i class="fa fa-trash"></i> Hapus</a>
                     </div>
                 </div>
             </div>
@@ -121,21 +122,9 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-12">
 									<div class="row">
-										<a href="{{ site_url('kasir/transaksi/detail_create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Transaksi</a>
-									</div>
-								</div>
-								<div class="col-sm-6">
-									<div class="row float-right">
-										<label for="filter">
-											<select id="table-data-filter-column" class="form-control form-control-sm">
-												<option>Transaksi</option>
-												<option>Menu</option>
-												<option>Jumlah Beli</option>
-												<option>Total Harga</option>
-											</select>
-										</label>
+										
 									</div>
 								</div>
                             </div>
@@ -146,7 +135,6 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Transaksi</th>
 									<th>Menu</th>
 									<th>Jumlah Beli</th>
 									<th>Total Harga</th>
@@ -154,17 +142,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-									<td>1</td>
-									<td>Transaksi #1</td>
-									<td>Menu #1</td>
-									<td>2</td>
-									<td>50000</td>
-									<td>
-										<a href="{{ site_url('kasir/transaksi/detail_edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('kasir/transaksi/detail_destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
-                                    </td>
-								</tr>
+								@foreach ($info2 as $info_data)
+									<tr>
+										<td>{{ $info_data->id }}</td>
+										<td>Menu #{{ $info_data->id_menu }}</td>
+										<td>{{ $info_data->jumlah_beli }}</td>
+										<td>{{ $info_data->total_harga }}</td>
+										<td>
+											<a href="{{ site_url('kasir/transaksi/detail_edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+											<a href="{{ site_url('kasir/transaksi/detail_destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+										</td>
+									</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>
@@ -180,5 +169,18 @@
 @endsection
 
 @section('fscripts')
+<!-- DataTables -->
+<script src="{{ asset('cpanel/vendor/datatables/jquery.dataTables.js') }}"></script>
+<script src="{{ asset('cpanel/vendor/datatables/dataTables.bootstrap4.js') }}"></script>
+<!-- Page Script -->
+<script>
+var table = $('#table-data').DataTable({
+	"bFilter": false
+});
 
+$('.dataTables_filter input').unbind().bind('keyup', function() {
+	var colIndex = document.querySelector('#table-data-filter-column').selectedIndex;
+	table.column( colIndex).search( this.value ).draw();
+});
+</script>
 @endsection

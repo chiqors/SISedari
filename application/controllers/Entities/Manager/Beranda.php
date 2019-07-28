@@ -13,7 +13,9 @@ class Beranda extends CI_Controller {
 
 	public function index()
 	{
+		$data_get1 = $this->manager_model->get_list_rank_menu();
 		$data = array(
+			'info_rankmenu' => $data_get1,
 			'activeMenu' => 'beranda',
 			'title' => 'Beranda'
         );

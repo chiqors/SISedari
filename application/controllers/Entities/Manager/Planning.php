@@ -43,7 +43,7 @@ class Planning extends CI_Controller {
 			redirect('manager/planning/create');
 		} else {
 			$this->planning_model->store();
-			$this->session->set_flashdata('success', 'Planning baru telah diperbaharui');
+			$this->session->set_flashdata('success', 'Planning baru telah ditambahkan');
 			redirect('manager/planning');
 		}
 	}

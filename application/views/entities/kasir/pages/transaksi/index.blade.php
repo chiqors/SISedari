@@ -44,7 +44,7 @@
                             <div class="row">
 								<div class="col-sm-6">
 									<div class="row">
-										<a href="{{ site_url('kasir/transaksi/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i> Tambah Transaksi</a>
+										
 									</div>
 								</div>
 								<div class="col-sm-6">
@@ -77,19 +77,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-									<td>1</td>
-									<td>14 July 2019</td>
-									<td>150000</td>
-									<td>Kupon #1 - 25%</td>
-									<td>125000</td>
-									<td>setiawan1</td>
+								@foreach ($info as $info_data)
+								<tr>
+									<td>{{ $info_data->id }}</td>
+									<td>{{ $info_data->tanggal }}</td>
+									<td>{{ $info_data->sub_total }}</td>
+									<td>{{ $info_data->kupon }}</td>
+									<td>{{ $info_data->total_harga }}</td>
+									<td>{{ $info_data->kasir }}</td>
 									<td>
-										<a href="{{ site_url('kasir/transaksi/show/1') }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
-										<a href="{{ site_url('kasir/transaksi/edit/1') }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
-										<a href="{{ site_url('kasir/transaksi/destroy/1') }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
-                                    </td>
+										<a href="{{ site_url('kasir/transaksi/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('kasir/transaksi/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
+										<a href="{{ site_url('kasir/transaksi/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
+									</td>
 								</tr>
+								@endforeach
                             </tbody>
                         </table>
                     </div>
@@ -112,45 +114,12 @@
 <!-- Page Script -->
 <script>
 $(document).ready(function() {
-    var groupColumn = 1;
-    var table = $('#table-data').DataTable({
-        "columnDefs": [
-            { "visible": false, "targets": groupColumn }
-        ],
-        "order": [[ groupColumn, 'asc' ]],
-        "displayLength": 25,
-        "drawCallback": function ( settings ) {
-            var api = this.api();
-            var rows = api.rows( {page:'current'} ).nodes();
-            var last=null;
-
-            api.column(groupColumn, {page:'current'} ).data().each( function ( group, i ) {
-                if ( last !== group ) {
-                    $(rows).eq( i ).before(
-                        '<tr class="group"><td colspan="7"><b>'+group+'</b></td></tr>'
-                    );
-
-                    last = group;
-                }
-            } );
-        }
-    } );
+    var table = $('#table-data').DataTable();
 
     $('.dataTables_filter input').unbind().bind('keyup', function() {
         var colIndex = document.querySelector('#table-data-filter-column').selectedIndex;
         table.column( colIndex).search( this.value ).draw();
     });
-
-    // Order by the grouping
-    $('#table-data tbody').on( 'click', 'tr.group', function () {
-        var currentOrder = table.order()[0];
-        if ( currentOrder[0] === groupColumn && currentOrder[1] === 'asc' ) {
-            table.order( [ groupColumn, 'desc' ] ).draw();
-        }
-        else {
-            table.order( [ groupColumn, 'asc' ] ).draw();
-        }
-    } );
 } );
 </script>
 @endsection

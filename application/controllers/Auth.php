@@ -26,6 +26,7 @@ class Auth extends CI_Controller {
 		$login = $this->pengguna_model->do_login();
 		if ($login > 0) {
 			$data_session = array(
+				'nip' => $login->nip,
 				'username' => $login->username,
 				'jabatan' => $login->jabatan
 			);

@@ -105,6 +105,12 @@ $route['manager/transaksi/show/(:any)'] = 'entities/manager/transaksi/show/$1';
 $route['kasir'] = 'entities/kasir/beranda/index';
 $route['kasir/beranda'] = 'entities/kasir/beranda/index';
 
+$route['kasir/alur/transaksi/start'] = 'entities/kasir/alur/start';
+$route['kasir/alur/transaksi/detail_transaksi'] = 'entities/kasir/alur/detail_transaksi';
+$route['kasir/alur/transaksi/store_detail_transaksi'] = 'entities/kasir/alur/store_detail_transaksi';
+$route['kasir/alur/transaksi/transaksi'] = 'entities/kasir/alur/transaksi';
+$route['kasir/alur/transaksi/store_transaksi/(:any)'] = 'entities/kasir/alur/store_transaksi/$1';
+
 $route['kasir/transaksi'] = 'entities/kasir/transaksi/index';
 $route['kasir/transaksi/create'] = 'entities/kasir/transaksi/create';
 $route['kasir/transaksi/store'] = 'entities/kasir/transaksi/store';

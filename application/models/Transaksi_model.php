@@ -29,13 +29,19 @@ class Transaksi_model extends CI_Model {
 		return $query->row();
 	}
 
+	public function get_data_child($info)
+	{
+		$query = $this->db->get_where('detail_transaksi', array('id' => $info));
+		return $query->row();
+	}
+
 	public function store()
 	{
 		$data = array(
 			'tanggal' => $this->input->post('tanggal'),
 			'sub_total' => $this->input->post('sub_total'),
-			'sub_total' => $this->input->post('sub_total'),
 			'kupon' => $this->input->post('kupon'),
+			'total_harga' => $this->input->post('total_harga'),
 			'bayar' => $this->input->post('bayar'),
 			'kembalian' => $this->input->post('kembalian'),
 			'kasir' => $this->input->post('kasir')
@@ -48,8 +54,8 @@ class Transaksi_model extends CI_Model {
 		$data = array(
 			'tanggal' => $this->input->post('tanggal'),
 			'sub_total' => $this->input->post('sub_total'),
-			'sub_total' => $this->input->post('sub_total'),
 			'kupon' => $this->input->post('kupon'),
+			'total_harga' => $this->input->post('total_harga'),
 			'bayar' => $this->input->post('bayar'),
 			'kembalian' => $this->input->post('kembalian'),
 			'kasir' => $this->input->post('kasir')
