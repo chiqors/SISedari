@@ -83,7 +83,7 @@
 									<td>{{ $info_data->nip_karyawan }}</td>
 									<td>{{ $info_data->status }}</td>
 									<td>
-											<a href="{{ site_url('manager/planning/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
+										<a href="{{ site_url('manager/planning/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
 										<a href="{{ site_url('manager/planning/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('manager/planning/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
 									</td>
