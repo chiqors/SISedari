@@ -86,7 +86,7 @@ class Transaksi extends CI_Controller {
 			$this->session->set_flashdata('error', validation_errors());
 			redirect('kasir/transaksi/edit/'.$id);
 		} else {
-			$this->tranksaksi_model->update($id);
+			$this->transaksi_model->update($id);
 			$this->session->set_flashdata('success', 'Transaksi #'.$id.' telah diperbaharui');
 			redirect('kasir/transaksi');
 		}
@@ -94,7 +94,7 @@ class Transaksi extends CI_Controller {
 
 	public function destroy($id)
 	{
-		$this->tranksaksi_model->destroy($id);
+		$this->transaksi_model->destroy($id);
 		$this->session->set_flashdata('success', 'Transaksi #'.$id.' beserta detailnya telah dihapus');
 		redirect('kasir/transaksi');
 	}

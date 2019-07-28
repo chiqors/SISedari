@@ -66,10 +66,10 @@ class Transaksi_model extends CI_Model {
 
 	public function destroy($id)
 	{
-		$query1 = $this->db->where('id', $id);
-		$result1 = $query1->delete('transaksi');
 		$query2 = $this->db->where('id_transaksi', $id);
 		$result2 = $query2->delete('detail_transaksi');
+		$query1 = $this->db->where('id', $id);
+		$result1 = $query1->delete('transaksi');
 		return true;
 	}
 	
