@@ -81,7 +81,6 @@
                                     <td>{{ $info_data->harga }}</td>
 									<td>{{ $info_data->stok }}</td>
 									<td>
-										<a href="{{ site_url('manager/menu/show/'.$info_data->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
 										<a href="{{ site_url('manager/menu/edit/'.$info_data->id) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('manager/menu/destroy/'.$info_data->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>

@@ -14,7 +14,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Dashboard</a></li>
+					<li class="breadcrumb-item"><a href="{{ site_url('manager') }}">Beranda</a></li>
 					<li class="breadcrumb-item"><a href="{{ site_url('manager/kupon') }}">Kupon</a></li>
                     <li class="breadcrumb-item active">{{ @$info ? 'Ubah' : 'Tambah' }} Kupon</li>
                 </ol>

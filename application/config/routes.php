@@ -62,7 +62,6 @@ $route['beranda'] = 'auth/login';
 // -------------------------------------
 
 $route['manager'] = 'entities/manager/beranda/index';
-$route['manager/beranda'] = 'entities/manager/beranda/index';
 
 $route['manager/menu'] = 'entities/manager/menu/index';
 $route['manager/menu/create'] = 'entities/manager/menu/create';
@@ -102,8 +101,7 @@ $route['manager/transaksi/show/(:any)'] = 'entities/manager/transaksi/show/$1';
 // Kasir
 // -------------------------------------
 
-$route['kasir'] = 'entities/kasir/beranda/index';
-$route['kasir/beranda'] = 'entities/kasir/beranda/index';
+$route['kasir'] = 'entities/kasir/transaksi/index';
 
 $route['kasir/alur/transaksi/start'] = 'entities/kasir/alur/start';
 $route['kasir/alur/transaksi/detail_transaksi'] = 'entities/kasir/alur/detail_transaksi';
@@ -128,8 +126,7 @@ $route['kasir/transaksi/detail_destroy/(:any)'] = 'entities/kasir/transaksi/deta
 // CEO
 // -------------------------------------
 
-$route['ceo'] = 'entities/ceo/beranda/index';
-$route['ceo/beranda'] = 'entities/ceo/beranda/index';
+$route['ceo'] = 'entities/ceo/planning/index';
 
 $route['ceo/planning'] = 'entities/ceo/planning/index';
 $route['ceo/planning/show/(:any)'] = 'entities/ceo/planning/show/$1';

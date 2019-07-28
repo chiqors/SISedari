@@ -6,7 +6,7 @@
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="{{ site_url('kasir/beranda') }}" class="nav-link">Beranda</a>
+            <a href="{{ site_url('kasir/transaksi') }}" class="nav-link">Transaksi</a>
         </li>
     </ul>
 

@@ -1,17 +1,17 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ site_url('manager/beranda') }}" class="brand-link bg-primary">
+    <a href="{{ site_url('manager') }}" class="brand-link bg-primary">
         <img src="{{ asset('cpanel/img/logo.png') }}" alt="Logo" class="brand-image"
             style="opacity: .8">
-        <span class="brand-text font-weight"><b>{{ getenv('APP_NAME') }}</b></span>
+        <span class="brand-text font-weight"><b>{{ getenv('APP_NAME') }} (Manager)</b></span>
     </a>
     <!-- Profile panel -->
     <div class="user-profile d-flex">
         <div class="profile-canvas" style="background-image: linear-gradient(135deg,rgba(45,53,61,.79) 0,rgba(45,53,61,.5) 100%),url({{ asset('cpanel/img/bg.jpg') }})"></div>
         <a href="#" class="profile-link">
             <img src="{{ asset('cpanel/img/_manager.png') }}" alt="Logo" class="brand-image img-circle elevation-3">
-            <span class="brand-text profile-text font-weight-light"><b>{{ $this->session->username }}</b> <i class="fa fa-cog"></i></span>
+            <span class="brand-text profile-text font-weight-light"><b>{{ $this->session->username }}</b></span>
         </a>
     </div>
 
@@ -22,9 +22,9 @@
             <ul class="nav nav-pills nav-sidebar flex-column sidebar-menu" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
-                <li class="nav-item {{ @$activeMenu == 'beranda' ? 'menu-open' : '' }}">
-                    <a href="{{ site_url('manager/beranda') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-dashboard"></i>
+				<li class="nav-item {{ @$activeMenu == 'beranda' ? 'menu-open' : '' }}">
+                    <a href="{{ site_url('manager') }}" class="nav-link {{ @$activeMenu == 'beranda' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-home"></i>
                         <p>
                             Beranda
                         </p>

@@ -42,7 +42,7 @@
 				&nbsp;
 			</div>
 			<div class="row">
-				<a href="{{ site_url('kasir/alur/transaksi/start') }}" class="btn btn-primary btn-xs"><span class="fa fa-plus"></span> Tambah Alur Transaksi</a>
+				
 			</div>
 		</div>
 		<!-- /.card-footer-->

@@ -16,7 +16,6 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-					<li class="breadcrumb-item"><a href="{{ site_url('kasir') }}">Beranda</a></li>
 					<li class="breadcrumb-item">Alur Transaksi</li>
                     <li class="breadcrumb-item active">Detail Transaksi</li>
                 </ol>

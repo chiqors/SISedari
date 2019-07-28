@@ -32,11 +32,11 @@ class Auth extends CI_Controller {
 			);
 			$this->session->set_userdata($data_session);
 			if ($this->session->jabatan == 'CEO') {
-				redirect('ceo/beranda');
+				redirect('ceo');
 			} else if ($this->session->jabatan == 'Manager') {
-				redirect('manager/beranda');
+				redirect('manager');
 			} else if ($this->session->jabatan == 'Kasir') {
-				redirect('kasir/beranda');
+				redirect('kasir');
 			}
 		} else {
 			$this->session->set_flashdata('error', validation_errors());

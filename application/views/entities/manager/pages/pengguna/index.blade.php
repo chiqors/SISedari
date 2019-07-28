@@ -85,7 +85,6 @@
 									<td>{{ $info_data->jabatan }}</td>
 									<td>{{ $info_data->username }}</td>
 									<td>
-										<a href="{{ site_url('manager/pengguna/show/'.$info_data->nip) }}" class="btn btn-info btn-xs"><i class="fa fa-eye"></i> Tampil</a> | 
 										<a href="{{ site_url('manager/pengguna/edit/'.$info_data->nip) }}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i> Ubah</a> | 
 										<a href="{{ site_url('manager/pengguna/destroy/'.$info_data->nip) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i> Hapus</a>
                                     </td>
