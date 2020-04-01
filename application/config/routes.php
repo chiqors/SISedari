@@ -61,66 +61,66 @@ $route['beranda'] = 'auth/login';
 // Manager
 // -------------------------------------
 
-$route['manager'] = 'manager_beranda/index';
+$route['manager'] = 'Manager_Beranda/index';
 
-$route['manager/menu'] = 'manager_menu/index';
-$route['manager/menu/create'] = 'manager_menu/create';
-$route['manager/menu/store'] = 'manager_menu/store';
-$route['manager/menu/show/(:any)'] = 'manager_menu/show/$1';
-$route['manager/menu/edit/(:any)'] = 'manager_menu/edit/$1';
-$route['manager/menu/update/(:any)'] = 'manager_menu/update/$1';
-$route['manager/menu/destroy/(:any)'] = 'manager_menu/destroy/$1';
+$route['manager/menu'] = 'Manager_Menu/index';
+$route['manager/menu/create'] = 'Manager_Menu/create';
+$route['manager/menu/store'] = 'Manager_Menu/store';
+$route['manager/menu/show/(:any)'] = 'Manager_Menu/show/$1';
+$route['manager/menu/edit/(:any)'] = 'Manager_Menu/edit/$1';
+$route['manager/menu/update/(:any)'] = 'Manager_Menu/update/$1';
+$route['manager/menu/destroy/(:any)'] = 'Manager_Menu/destroy/$1';
 
-$route['manager/kupon'] = 'manager_kupon/index';
-$route['manager/kupon/create'] = 'manager_kupon/create';
-$route['manager/kupon/store'] = 'manager_kupon/store';
-$route['manager/kupon/edit/(:any)'] = 'manager_kupon/edit/$1';
-$route['manager/kupon/update/(:any)'] = 'manager_kupon/update/$1';
-$route['manager/kupon/destroy/(:any)'] = 'manager_kupon/destroy/$1';
+$route['manager/kupon'] = 'Manager_Kupon/index';
+$route['manager/kupon/create'] = 'Manager_Kupon/create';
+$route['manager/kupon/store'] = 'Manager_Kupon/store';
+$route['manager/kupon/edit/(:any)'] = 'Manager_Kupon/edit/$1';
+$route['manager/kupon/update/(:any)'] = 'Manager_Kupon/update/$1';
+$route['manager/kupon/destroy/(:any)'] = 'Manager_Kupon/destroy/$1';
 
-$route['manager/planning'] = 'manager_planning/index';
-$route['manager/planning/create'] = 'manager_planning/create';
-$route['manager/planning/store'] = 'manager_planning/store';
-$route['manager/planning/show/(:any)'] = 'manager_planning/show/$1';
-$route['manager/planning/edit/(:any)'] = 'manager_planning/edit/$1';
-$route['manager/planning/update/(:any)'] = 'manager_planning/update/$1';
-$route['manager/planning/destroy/(:any)'] = 'manager_planning/destroy/$1';
+$route['manager/planning'] = 'Manager_Planning/index';
+$route['manager/planning/create'] = 'Manager_Planning/create';
+$route['manager/planning/store'] = 'Manager_Planning/store';
+$route['manager/planning/show/(:any)'] = 'Manager_Planning/show/$1';
+$route['manager/planning/edit/(:any)'] = 'Manager_Planning/edit/$1';
+$route['manager/planning/update/(:any)'] = 'Manager_Planning/update/$1';
+$route['manager/planning/destroy/(:any)'] = 'Manager_Planning/destroy/$1';
 
-$route['manager/pengguna'] = 'manager_pengguna/index';
-$route['manager/pengguna/create'] = 'manager_pengguna/create';
-$route['manager/pengguna/store'] = 'manager_pengguna/store';
-$route['manager/pengguna/show/(:any)'] = 'manager_pengguna/show/$1';
-$route['manager/pengguna/edit/(:any)'] = 'manager_pengguna/edit/$1';
-$route['manager/pengguna/update/(:any)'] = 'manager_pengguna/update/$1';
-$route['manager/pengguna/destroy/(:any)'] = 'manager_pengguna/destroy/$1';
+$route['manager/pengguna'] = 'Manager_Pengguna/index';
+$route['manager/pengguna/create'] = 'Manager_Pengguna/create';
+$route['manager/pengguna/store'] = 'Manager_Pengguna/store';
+$route['manager/pengguna/show/(:any)'] = 'Manager_Pengguna/show/$1';
+$route['manager/pengguna/edit/(:any)'] = 'Manager_Pengguna/edit/$1';
+$route['manager/pengguna/update/(:any)'] = 'Manager_Pengguna/update/$1';
+$route['manager/pengguna/destroy/(:any)'] = 'Manager_Pengguna/destroy/$1';
 
-$route['manager/transaksi'] = 'manager_transaksi/index';
-$route['manager/transaksi/show/(:any)'] = 'manager_transaksi/show/$1';
+$route['manager/transaksi'] = 'Manager_Transaksi/index';
+$route['manager/transaksi/show/(:any)'] = 'Manager_Transaksi/show/$1';
 
 // -------------------------------------
 // Kasir
 // -------------------------------------
 
-$route['kasir'] = 'kasir_transaksi/index';
+$route['kasir'] = 'Kasir_Transaksi/index';
 
-$route['kasir/alur/transaksi/start'] = 'kasir_alur/start';
-$route['kasir/alur/transaksi/detail_transaksi'] = 'kasir_alur/detail_transaksi';
-$route['kasir/alur/transaksi/store_detail_transaksi'] = 'kasir_alur/store_detail_transaksi';
-$route['kasir/alur/transaksi/transaksi'] = 'kasir_alur/transaksi';
-$route['kasir/alur/transaksi/store_transaksi/(:any)'] = 'kasir_alur/store_transaksi/$1';
+$route['kasir/alur/transaksi/start'] = 'Kasir_Alur/start';
+$route['kasir/alur/transaksi/detail_transaksi'] = 'Kasir_Alur/detail_transaksi';
+$route['kasir/alur/transaksi/store_detail_transaksi'] = 'Kasir_Alur/store_detail_transaksi';
+$route['kasir/alur/transaksi/transaksi'] = 'Kasir_Alur/transaksi';
+$route['kasir/alur/transaksi/store_transaksi/(:any)'] = 'Kasir_Alur/store_transaksi/$1';
 
-$route['kasir/transaksi'] = 'kasir_transaksi/index';
-$route['kasir/transaksi/create'] = 'kasir_transaksi/create';
-$route['kasir/transaksi/store'] = 'kasir_transaksi/store';
-$route['kasir/transaksi/show/(:any)'] = 'kasir_transaksi/show/$1';
-$route['kasir/transaksi/edit/(:any)'] = 'kasir_transaksi/edit/$1';
-$route['kasir/transaksi/update/(:any)'] = 'kasir_transaksi/update/$1';
-$route['kasir/transaksi/destroy/(:any)'] = 'kasir_transaksi/destroy/$1';
-$route['kasir/transaksi/detail_create'] = 'kasir_transaksi/detail_create/$1';
-$route['kasir/transaksi/detail_store'] = 'kasir_transaksi/detail_store/$1';
-$route['kasir/transaksi/detail_edit/(:any)'] = 'kasir_transaksi/detail_edit/$1';
-$route['kasir/transaksi/detail_update/(:any)'] = 'kasir_transaksi/detail_update/$1';
-$route['kasir/transaksi/detail_destroy/(:any)'] = 'kasir_transaksi/detail_destroy/$1';
+$route['kasir/transaksi'] = 'Kasir_Transaksi/index';
+$route['kasir/transaksi/create'] = 'Kasir_Transaksi/create';
+$route['kasir/transaksi/store'] = 'Kasir_Transaksi/store';
+$route['kasir/transaksi/show/(:any)'] = 'Kasir_Transaksi/show/$1';
+$route['kasir/transaksi/edit/(:any)'] = 'Kasir_Transaksi/edit/$1';
+$route['kasir/transaksi/update/(:any)'] = 'Kasir_Transaksi/update/$1';
+$route['kasir/transaksi/destroy/(:any)'] = 'Kasir_Transaksi/destroy/$1';
+$route['kasir/transaksi/detail_create'] = 'Kasir_Transaksi/detail_create/$1';
+$route['kasir/transaksi/detail_store'] = 'Kasir_Transaksi/detail_store/$1';
+$route['kasir/transaksi/detail_edit/(:any)'] = 'Kasir_Transaksi/detail_edit/$1';
+$route['kasir/transaksi/detail_update/(:any)'] = 'Kasir_Transaksi/detail_update/$1';
+$route['kasir/transaksi/detail_destroy/(:any)'] = 'Kasir_Transaksi/detail_destroy/$1';
 
 // -------------------------------------
 // CEO
@@ -128,16 +128,16 @@ $route['kasir/transaksi/detail_destroy/(:any)'] = 'kasir_transaksi/detail_destro
 
 $route['ceo'] = 'ceo_planning/index';
 
-$route['ceo/planning'] = 'ceo_planning/index';
-$route['ceo/planning/show/(:any)'] = 'ceo_planning/show/$1';
-$route['ceo/planning/edit/(:any)'] = 'ceo_planning/edit/$1';
-$route['ceo/planning/update/(:any)'] = 'ceo_planning/update/$1';
-$route['ceo/planning/destroy/(:any)'] = 'ceo_planning/destroy/$1';
+$route['ceo/planning'] = 'CEO_Planning/index';
+$route['ceo/planning/show/(:any)'] = 'CEO_Planning/show/$1';
+$route['ceo/planning/edit/(:any)'] = 'CEO_Planning/edit/$1';
+$route['ceo/planning/update/(:any)'] = 'CEO_Planning/update/$1';
+$route['ceo/planning/destroy/(:any)'] = 'CEO_Planning/destroy/$1';
 
-$route['ceo/pengguna'] = 'ceo_pengguna/index';
-$route['ceo/pengguna/create'] = 'ceo_pengguna/create';
-$route['ceo/pengguna/store'] = 'ceo_pengguna/store';
-$route['ceo/pengguna/show/(:any)'] = 'ceo_pengguna/show/$1';
-$route['ceo/pengguna/edit/(:any)'] = 'ceo_pengguna/edit/$1';
-$route['ceo/pengguna/update/(:any)'] = 'ceo_pengguna/update/$1';
-$route['ceo/pengguna/destroy/(:any)'] = 'ceo_pengguna/destroy/$1';
+$route['ceo/pengguna'] = 'CEO_Pengguna/index';
+$route['ceo/pengguna/create'] = 'CEO_Pengguna/create';
+$route['ceo/pengguna/store'] = 'CEO_Pengguna/store';
+$route['ceo/pengguna/show/(:any)'] = 'CEO_Pengguna/show/$1';
+$route['ceo/pengguna/edit/(:any)'] = 'CEO_Pengguna/edit/$1';
+$route['ceo/pengguna/update/(:any)'] = 'CEO_Pengguna/update/$1';
+$route['ceo/pengguna/destroy/(:any)'] = 'CEO_Pengguna/destroy/$1';
