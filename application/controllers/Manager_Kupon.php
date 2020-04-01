@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Kupon extends CI_Controller {
+class Manager_Kupon extends CI_Controller {
 
 	public function __construct()
 	{

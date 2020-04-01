@@ -1,12 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Planning extends CI_Controller {
+class CEO_Planning extends CI_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-		if ($this->session->jabatan != 'Manager') {
+		if ($this->session->jabatan != 'CEO') {
 			redirect('auth/login');
 		}
 	}
@@ -19,7 +19,7 @@ class Planning extends CI_Controller {
 			'activeMenu' => 'planning',
             'title' => 'Planning'
         );
-		$this->slice->view('entities.manager.pages.planning.index', $data);
+		$this->slice->view('entities.ceo.pages.planning.index', $data);
 	}
 
 	public function create()
@@ -27,49 +27,31 @@ class Planning extends CI_Controller {
 		$data = array(
             'title' => 'Tambah Planning Baru'
         );
-		$this->slice->view('entities.manager.pages.planning.form', $data);
-	}
-
-	public function store()
-	{
-		$this->form_validation->set_rules('judul', 'Judul', 'required');
-		$this->form_validation->set_rules('konten', 'Konten', 'required|min_length[30]');
-		$this->form_validation->set_rules('tanggal_promo_mulai', 'Tanggal Promo Mulai', 'required');
-		$this->form_validation->set_rules('tanggal_promo_selesai', 'Tanggal Promo Selesai', 'required');
-		$this->form_validation->set_rules('status', 'Status Planning', 'required');
-
-		if($this->form_validation->run() === FALSE) {
-			$this->session->set_flashdata('error', validation_errors());
-			redirect('manager/planning/create');
-		} else {
-			$this->planning_model->store();
-			$this->session->set_flashdata('success', 'Planning baru telah ditambahkan');
-			redirect('manager/planning');
-		}
+		$this->slice->view('entities.ceo.pages.planning.form', $data);
 	}
 
 	public function show($id) {
 		$data_get = $this->planning_model->get_data($id);
 		if(empty($data_get)) {
-			redirect('manager/planning');
+			redirect('ceo/planning');
 		}
 		$data = array(
 			'info' => $data_get,
             'title' => 'Tampil Planning #'.$id
         );
-		$this->slice->view('entities.manager.pages.planning.show', $data);
+		$this->slice->view('entities.ceo.pages.planning.show', $data);
 	}
 
 	public function edit($id) {
 		$data_get = $this->planning_model->get_data($id);
 		if(empty($data_get)) {
-			redirect('manager/planning');
+			redirect('ceo/planning');
 		}
 		$data = array(
 			'info' => $data_get,
             'title' => 'Ubah Planning #'.$id
         );
-		$this->slice->view('entities.manager.pages.planning.form', $data);
+		$this->slice->view('entities.ceo.pages.planning.form', $data);
 	}
 
 	public function update($id)
@@ -82,11 +64,11 @@ class Planning extends CI_Controller {
 
 		if($this->form_validation->run() === FALSE) {
 			$this->session->set_flashdata('error', validation_errors());
-			redirect('manager/planning/edit/'.$id);
+			redirect('ceo/planning/edit/'.$id);
 		} else {
 			$this->planning_model->update($id);
 			$this->session->set_flashdata('success', 'Planning '.$id.' telah diperbaharui');
-			redirect('manager/planning');
+			redirect('ceo/planning');
 		}
 	}
 
@@ -94,6 +76,6 @@ class Planning extends CI_Controller {
 	{
 		$this->planning_model->destroy($id);
 		$this->session->set_flashdata('success', 'Planning '.$id.' telah dihapus');
-		redirect('manager/planning');
+		redirect('ceo/planning');
 	}
 }
